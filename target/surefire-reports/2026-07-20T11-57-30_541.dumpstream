@@ -1,0 +1,5 @@
+# Created at 2026-07-20T11:57:30.887
+Boot Manifest-JAR contains absolute paths in classpath '\\wsl.localhost\ubuntu\home\vaibhav\projects\entity-gateway-mcp\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' is different type of Path
+

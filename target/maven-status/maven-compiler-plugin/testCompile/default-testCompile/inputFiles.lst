@@ -1,0 +1,3 @@
+\\wsl.localhost\ubuntu\home\vaibhav\projects\entity-gateway-mcp\src\test\java\com\acme\gateway\domain\service\SignatureDeletionOrchestratorTest.java
+\\wsl.localhost\ubuntu\home\vaibhav\projects\entity-gateway-mcp\src\test\java\com\acme\gateway\ftp\CommonsNetFtpGatewayTest.java
+\\wsl.localhost\ubuntu\home\vaibhav\projects\entity-gateway-mcp\src\test\java\com\acme\gateway\it\DeletionSagaIntegrationTest.java

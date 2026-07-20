@@ -1,0 +1,113 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# entity-gateway-mcp — Streamable HTTP MCP server over MS SQL Server + FTP
+# Spring Boot 4.1 / Spring AI 2.0 (GA). See architecture doc §4.3.
+# ─────────────────────────────────────────────────────────────────────────────
+spring:
+  application:
+    name: entity-gateway-mcp
+
+  threads:
+    virtual:
+      enabled: true                    # Java 21 virtual threads: servlet + blocking JDBC scale
+
+  ai:
+    mcp:
+      server:
+        name: entity-gateway
+        version: 1.0.0
+        protocol: STREAMABLE           # Streamable HTTP (spec 2025-06-18). NOT stdio, NOT deprecated SSE.
+        type: SYNC                     # imperative tools only; reactive signatures would be ignored
+        instructions: >
+          Gateway to customer profiles and signature files. All tools are strictly
+          typed. delete_signature_file is destructive, idempotent via requestId,
+          and asynchronous-by-contract: poll get_deletion_status for convergence.
+        annotation-scanner:
+          enabled: true                # auto-registers @McpTool beans
+        capabilities:
+          tool: true
+          resource: false              # attack-surface minimization: tools ONLY
+          prompt: false
+          completion: false
+        tool-change-notification: true
+        streamable-http:
+          mcp-endpoint: /mcp
+          keep-alive-interval: 30s
+
+  datasource:
+    url: jdbc:sqlserver://${DB_HOST:localhost}:${DB_PORT:1433};databaseName=${DB_NAME:entitydb};encrypt=true;trustServerCertificate=${DB_TRUST_SERVER_CERT:false}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 4
+      connection-timeout: 5000
+      validation-timeout: 3000
+      max-lifetime: 1200000
+
+  jpa:
+    open-in-view: false                # mandatory: no lazy-loading leaks into the transport layer
+    hibernate:
+      ddl-auto: validate               # Flyway owns the schema
+    properties:
+      hibernate:
+        jdbc.time_zone: UTC
+        query.plan_cache_max_size: 512
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${OIDC_ISSUER_URI}       # enterprise IdP (Entra ID / Keycloak / Okta)
+          audiences: entity-gateway
+
+server:
+  port: 8443
+  shutdown: graceful                   # drain in-flight tool calls before stopping
+
+gateway:
+  security:
+    # Origin allow-list for the /mcp endpoint (MCP spec DNS-rebinding defense).
+    allowed-origins: ${MCP_ALLOWED_ORIGINS:https://agents.internal.acme.com}
+  ftp:
+    host: ${FTP_HOST}
+    port: ${FTP_PORT:21}
+    username: ${FTP_USER}
+    password: ${FTP_PASSWORD}
+    base-path: /signatures
+    connect-timeout: 5s
+    data-timeout: 15s                  # hard ceiling; drives Scenario-B RETRYABLE classification
+    control-keep-alive: 10s
+  deletion:
+    max-retries: 8
+    backoff-initial: 30s
+    backoff-multiplier: 2.0
+    backoff-cap: 1h
+    reconcile-interval: 60s
+    reconcile-batch-size: 25
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics, prometheus
+  otlp:
+    tracing:
+      endpoint: ${OTEL_EXPORTER_OTLP_ENDPOINT:http://localhost:4318}/v1/traces
+    metrics:
+      export:
+        url: ${OTEL_EXPORTER_OTLP_ENDPOINT:http://localhost:4318}/v1/metrics
+        step: 30s
+  tracing:
+    sampling:
+      probability: 1.0                 # tool calls are low-volume, high-value; sample everything
+  observations:
+    annotations:
+      enabled: true
+
+logging:
+  pattern:
+    correlation: "[${spring.application.name},%X{traceId:-},%X{spanId:-}] "

@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.acme.gateway.it.DeletionSagaIntegrationTest" time="76.526" tests="6" errors="0" skipped="0" failures="0" flakes="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="\\wsl.localhost\ubuntu\home\vaibhav\projects\entity-gateway-mcp\target\test-classes;\\wsl.localhost\ubuntu\home\vaibhav\projects\entity-gateway-mcp\target\classes;C:\Users\DELL\.m2\repository\org\springframework\ai\spring-ai-starter-mcp-server-webmvc\2.0.0\spring-ai-starter-mcp-server-webmvc-2.0.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-starter-web\4.1.0\spring-boot-starter-web-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-starter-jackson\4.1.0\spring-boot-starter-jackson-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-jackson\4.1.0\spring-boot-jackson-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\4.1.0\spring-boot-starter-tomcat-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat-runtime\4.1.0\spring-boot-starter-tomcat-runtime-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-web-server\4.1.0\spring-boot-web-server-4.1.0.jar;C:\Users\DELL\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\11.0.22\tomcat-embed-core-11.0.22.jar;C:\Users\DELL\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\11.0.22\tomcat-embed-websocket-11.0.22.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-tomcat\4.1.0\spring-boot-tomcat-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-http-converter\4.1.0\spring-boot-http-converter-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-webmvc\4.1.0\spring-boot-webmvc-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-servlet\4.1.0\spring-boot-servlet-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\ai\spring-ai-autoconfigure-mcp-server-webmvc\2.0.0\spring-ai-autoconfigure-mcp-server-webmvc-2.0.0.jar;C:\Users\DELL\.m2\repository\org\springframework\ai\spring-ai-autoconfigure-mcp-server-common\2.0.0\spring-ai-autoconfigure-mcp-server-common-2.0.0.jar;C:\Users\DELL\.m2\repository\org\springframework\ai\spring-ai-mcp\2.0.0\spring-ai-mcp-2.0.0.jar;C:\Users\DELL\.m2\repository\io\modelcontextprotocol\sdk\mcp\2.0.0\mcp-2.0.0.jar;C:\Users\DELL\.m2\repository\io\modelcontextprotocol\sdk\mcp-json-jackson3\2.0.0\mcp-json-jackson3-2.0.0.jar;C:\Users\DELL\.m2\repository\com\networknt\json-schema-validator\3.0.0\json-schema-validator-3.0.0.jar;C:\Users\DELL\.m2\repository\com\ethlo\time\itu\1.14.0\itu-1.14.0.jar;C:\Users\DELL\.m2\repository\tools\jackson\dataformat\jackson-dataformat-yaml\3.1.4\jackson-dataformat-yaml-3.1.4.jar;C:\Users\DELL\.m2\repository\org\snakeyaml\snakeyaml-engine\3.0.1\snakeyaml-engine-3.0.1.jar;C:\Users\DELL\.m2\repository\org\springframework\ai\spring-ai-model\2.0.0\spring-ai-model-2.0.0.jar;C:\Users\DELL\.m2\repository\org\springframework\ai\spring-ai-commons\2.0.0\spring-ai-commons-2.0.0.jar;C:\Users\DELL\.m2\repository\com\knuddels\jtokkit\1.1.0\jtokkit-1.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\ai\spring-ai-template-st\2.0.0\spring-ai-template-st-2.0.0.jar;C:\Users\DELL\.m2\repository\org\antlr\ST4\4.3.4\ST4-4.3.4.jar;C:\Users\DELL\.m2\repository\org\antlr\antlr-runtime\3.5.3\antlr-runtime-3.5.3.jar;C:\Users\DELL\.m2\repository\org\springframework\spring-messaging\7.0.8\spring-messaging-7.0.8.jar;C:\Users\DELL\.m2\repository\io\projectreactor\reactor-core\3.8.6\reactor-core-3.8.6.jar;C:\Users\DELL\.m2\repository\org\reactivestreams\reactive-streams\1.0.4\reactive-streams-1.0.4.jar;C:\Users\DELL\.m2\repository\org\antlr\antlr4-runtime\4.13.1\antlr4-runtime-4.13.1.jar;C:\Users\DELL\.m2\repository\com\github\victools\jsonschema-generator\5.0.0\jsonschema-generator-5.0.0.jar;C:\Users\DELL\.m2\repository\com\github\victools\jsonschema-module-jackson\5.0.0\jsonschema-module-jackson-5.0.0.jar;C:\Users\DELL\.m2\repository\com\github\victools\jsonschema-module-swagger-2\5.0.0\jsonschema-module-swagger-2-5.0.0.jar;C:\Users\DELL\.m2\repository\io\swagger\core\v3\swagger-annotations-jakarta\2.2.38\swagger-annotations-jakarta-2.2.38.jar;C:\Users\DELL\.m2\repository\org\springframework\ai\spring-ai-mcp-annotations\2.0.0\spring-ai-mcp-annotations-2.0.0.jar;C:\Users\DELL\.m2\repository\org\springframework\ai\mcp-spring-webmvc\2.0.0\mcp-spring-webmvc-2.0.0.jar;C:\Users\DELL\.m2\repository\io\modelcontextprotocol\sdk\mcp-core\2.0.0\mcp-core-2.0.0.jar;C:\Users\DELL\.m2\repository\org\springframework\spring-webmvc\7.0.8\spring-webmvc-7.0.8.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\4.1.0\spring-boot-starter-data-jpa-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-starter\4.1.0\spring-boot-starter-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-starter-logging\4.1.0\spring-boot-starter-logging-4.1.0.jar;C:\Users\DELL\.m2\repository\ch\qos\logback\logback-classic\1.5.34\logback-classic-1.5.34.jar;C:\Users\DELL\.m2\repository\ch\qos\logback\logback-core\1.5.34\logback-core-1.5.34.jar;C:\Users\DELL\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.25.4\log4j-to-slf4j-2.25.4.jar;C:\Users\DELL\.m2\repository\org\apache\logging\log4j\log4j-api\2.25.4\log4j-api-2.25.4.jar;C:\Users\DELL\.m2\repository\org\slf4j\jul-to-slf4j\2.0.18\jul-to-slf4j-2.0.18.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\4.1.0\spring-boot-autoconfigure-4.1.0.jar;C:\Users\DELL\.m2\repository\jakarta\annotation\jakarta.annotation-api\3.0.0\jakarta.annotation-api-3.0.0.jar;C:\Users\DELL\.m2\repository\org\yaml\snakeyaml\2.6\snakeyaml-2.6.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\4.1.0\spring-boot-starter-jdbc-4.1.0.jar;C:\Users\DELL\.m2\repository\com\zaxxer\HikariCP\7.0.2\HikariCP-7.0.2.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-data-jpa\4.1.0\spring-boot-data-jpa-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-data-commons\4.1.0\spring-boot-data-commons-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-persistence\4.1.0\spring-boot-persistence-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\data\spring-data-commons\4.1.0\spring-data-commons-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-hibernate\4.1.0\spring-boot-hibernate-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-jpa\4.1.0\spring-boot-jpa-4.1.0.jar;C:\Users\DELL\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.2.0\jakarta.persistence-api-3.2.0.jar;C:\Users\DELL\.m2\repository\org\hibernate\orm\hibernate-core\7.4.1.Final\hibernate-core-7.4.1.Final.jar;C:\Users\DELL\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\DELL\.m2\repository\org\hibernate\models\hibernate-models\1.1.1\hibernate-models-1.1.1.jar;C:\Users\DELL\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.9\jaxb-runtime-4.0.9.jar;C:\Users\DELL\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.9\jaxb-core-4.0.9.jar;C:\Users\DELL\.m2\repository\org\eclipse\angus\angus-activation\2.0.3\angus-activation-2.0.3.jar;C:\Users\DELL\.m2\repository\org\glassfish\jaxb\txw2\4.0.9\txw2-4.0.9.jar;C:\Users\DELL\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\DELL\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\DELL\.m2\repository\org\springframework\spring-orm\7.0.8\spring-orm-7.0.8.jar;C:\Users\DELL\.m2\repository\org\springframework\data\spring-data-jpa\4.1.0\spring-data-jpa-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\spring-aspects\7.0.8\spring-aspects-7.0.8.jar;C:\Users\DELL\.m2\repository\org\aspectj\aspectjweaver\1.9.25.1\aspectjweaver-1.9.25.1.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-jdbc\4.1.0\spring-boot-jdbc-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-sql\4.1.0\spring-boot-sql-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-transaction\4.1.0\spring-boot-transaction-4.1.0.jar;C:\Users\DELL\.m2\repository\com\microsoft\sqlserver\mssql-jdbc\13.4.0.jre11\mssql-jdbc-13.4.0.jre11.jar;C:\Users\DELL\.m2\repository\org\flywaydb\flyway-core\12.4.0\flyway-core-12.4.0.jar;C:\Users\DELL\.m2\repository\tools\jackson\core\jackson-databind\3.1.4\jackson-databind-3.1.4.jar;C:\Users\DELL\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.21\jackson-annotations-2.21.jar;C:\Users\DELL\.m2\repository\tools\jackson\core\jackson-core\3.1.4\jackson-core-3.1.4.jar;C:\Users\DELL\.m2\repository\org\flywaydb\flyway-sqlserver\12.4.0\flyway-sqlserver-12.4.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-flyway\4.1.0\spring-boot-flyway-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot\4.1.0\spring-boot-4.1.0.jar;C:\Users\DELL\.m2\repository\commons-net\commons-net\3.11.1\commons-net-3.11.1.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-starter-security\4.1.0\spring-boot-starter-security-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-security\4.1.0\spring-boot-security-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\security\spring-security-config\7.1.0\spring-security-config-7.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\spring-aop\7.0.8\spring-aop-7.0.8.jar;C:\Users\DELL\.m2\repository\org\springframework\spring-beans\7.0.8\spring-beans-7.0.8.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-starter-oauth2-resource-server\4.1.0\spring-boot-starter-oauth2-resource-server-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-security-oauth2-resource-server\4.1.0\spring-boot-security-oauth2-resource-server-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\security\spring-security-oauth2-jose\7.1.0\spring-security-oauth2-jose-7.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\security\spring-security-oauth2-core\7.1.0\spring-security-oauth2-core-7.1.0.jar;C:\Users\DELL\.m2\repository\com\nimbusds\nimbus-jose-jwt\10.9\nimbus-jose-jwt-10.9.jar;C:\Users\DELL\.m2\repository\org\springframework\security\spring-security-oauth2-resource-server\7.1.0\spring-security-oauth2-resource-server-7.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-starter-validation\4.1.0\spring-boot-starter-validation-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-validation\4.1.0\spring-boot-validation-4.1.0.jar;C:\Users\DELL\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\11.0.22\tomcat-embed-el-11.0.22.jar;C:\Users\DELL\.m2\repository\org\hibernate\validator\hibernate-validator\9.1.0.Final\hibernate-validator-9.1.0.Final.jar;C:\Users\DELL\.m2\repository\jakarta\validation\jakarta.validation-api\3.1.1\jakarta.validation-api-3.1.1.jar;C:\Users\DELL\.m2\repository\org\jboss\logging\jboss-logging\3.6.3.Final\jboss-logging-3.6.3.Final.jar;C:\Users\DELL\.m2\repository\com\fasterxml\classmate\1.7.3\classmate-1.7.3.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-starter-actuator\4.1.0\spring-boot-starter-actuator-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-starter-micrometer-metrics\4.1.0\spring-boot-starter-micrometer-metrics-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-micrometer-metrics\4.1.0\spring-boot-micrometer-metrics-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-micrometer-observation\4.1.0\spring-boot-micrometer-observation-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-actuator-autoconfigure\4.1.0\spring-boot-actuator-autoconfigure-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-actuator\4.1.0\spring-boot-actuator-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-health\4.1.0\spring-boot-health-4.1.0.jar;C:\Users\DELL\.m2\repository\io\micrometer\micrometer-observation\1.17.0\micrometer-observation-1.17.0.jar;C:\Users\DELL\.m2\repository\io\micrometer\micrometer-commons\1.17.0\micrometer-commons-1.17.0.jar;C:\Users\DELL\.m2\repository\io\micrometer\micrometer-jakarta9\1.17.0\micrometer-jakarta9-1.17.0.jar;C:\Users\DELL\.m2\repository\io\micrometer\micrometer-tracing-bridge-otel\1.7.0\micrometer-tracing-bridge-otel-1.7.0.jar;C:\Users\DELL\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\DELL\.m2\repository\io\micrometer\micrometer-tracing\1.7.0\micrometer-tracing-1.7.0.jar;C:\Users\DELL\.m2\repository\io\micrometer\context-propagation\1.2.1\context-propagation-1.2.1.jar;C:\Users\DELL\.m2\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;C:\Users\DELL\.m2\repository\org\slf4j\slf4j-api\2.0.18\slf4j-api-2.0.18.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\opentelemetry-api\1.62.0\opentelemetry-api-1.62.0.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\opentelemetry-context\1.62.0\opentelemetry-context-1.62.0.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\opentelemetry-common\1.62.0\opentelemetry-common-1.62.0.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.41.1\opentelemetry-semconv-1.41.1.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.62.0\opentelemetry-sdk-common-1.62.0.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.62.0\opentelemetry-sdk-trace-1.62.0.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.62.0\opentelemetry-sdk-1.62.0.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\opentelemetry-extension-trace-propagators\1.62.0\opentelemetry-extension-trace-propagators-1.62.0.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\opentelemetry-exporter-otlp\1.62.0\opentelemetry-exporter-otlp-1.62.0.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.62.0\opentelemetry-sdk-metrics-1.62.0.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.62.0\opentelemetry-sdk-logs-1.62.0.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\opentelemetry-exporter-otlp-common\1.62.0\opentelemetry-exporter-otlp-common-1.62.0.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\opentelemetry-exporter-common\1.62.0\opentelemetry-exporter-common-1.62.0.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\opentelemetry-exporter-sender-okhttp\1.62.0\opentelemetry-exporter-sender-okhttp-1.62.0.jar;C:\Users\DELL\.m2\repository\com\squareup\okhttp3\okhttp-jvm\5.3.2\okhttp-jvm-5.3.2.jar;C:\Users\DELL\.m2\repository\com\squareup\okio\okio-jvm\3.16.4\okio-jvm-3.16.4.jar;C:\Users\DELL\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib\2.3.21\kotlin-stdlib-2.3.21.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.62.0\opentelemetry-sdk-extension-autoconfigure-spi-1.62.0.jar;C:\Users\DELL\.m2\repository\io\micrometer\micrometer-registry-otlp\1.17.0\micrometer-registry-otlp-1.17.0.jar;C:\Users\DELL\.m2\repository\io\micrometer\micrometer-core\1.17.0\micrometer-core-1.17.0.jar;C:\Users\DELL\.m2\repository\org\hdrhistogram\HdrHistogram\2.2.2\HdrHistogram-2.2.2.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\proto\opentelemetry-proto\1.10.0-alpha\opentelemetry-proto-1.10.0-alpha.jar;C:\Users\DELL\.m2\repository\com\google\protobuf\protobuf-java\4.34.2\protobuf-java-4.34.2.jar;C:\Users\DELL\.m2\repository\net\logstash\logback\logstash-logback-encoder\8.1\logstash-logback-encoder-8.1.jar;C:\Users\DELL\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.21.4\jackson-databind-2.21.4.jar;C:\Users\DELL\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.21.4\jackson-core-2.21.4.jar;C:\Users\DELL\.m2\repository\net\javacrumbs\shedlock\shedlock-spring\6.3.0\shedlock-spring-6.3.0.jar;C:\Users\DELL\.m2\repository\net\javacrumbs\shedlock\shedlock-core\6.3.0\shedlock-core-6.3.0.jar;C:\Users\DELL\.m2\repository\org\springframework\spring-context\7.0.8\spring-context-7.0.8.jar;C:\Users\DELL\.m2\repository\org\springframework\spring-expression\7.0.8\spring-expression-7.0.8.jar;C:\Users\DELL\.m2\repository\net\javacrumbs\shedlock\shedlock-provider-jdbc-template\6.3.0\shedlock-provider-jdbc-template-6.3.0.jar;C:\Users\DELL\.m2\repository\org\springframework\spring-jdbc\7.0.8\spring-jdbc-7.0.8.jar;C:\Users\DELL\.m2\repository\org\springframework\spring-tx\7.0.8\spring-tx-7.0.8.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-starter-test\4.1.0\spring-boot-starter-test-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-test\4.1.0\spring-boot-test-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\4.1.0\spring-boot-test-autoconfigure-4.1.0.jar;C:\Users\DELL\.m2\repository\com\jayway\jsonpath\json-path\2.10.0\json-path-2.10.0.jar;C:\Users\DELL\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.5\jakarta.xml.bind-api-4.0.5.jar;C:\Users\DELL\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.4\jakarta.activation-api-2.1.4.jar;C:\Users\DELL\.m2\repository\net\minidev\json-smart\2.6.0\json-smart-2.6.0.jar;C:\Users\DELL\.m2\repository\net\minidev\accessors-smart\2.6.0\accessors-smart-2.6.0.jar;C:\Users\DELL\.m2\repository\org\ow2\asm\asm\9.7.1\asm-9.7.1.jar;C:\Users\DELL\.m2\repository\org\assertj\assertj-core\3.27.7\assertj-core-3.27.7.jar;C:\Users\DELL\.m2\repository\net\bytebuddy\byte-buddy\1.18.10\byte-buddy-1.18.10.jar;C:\Users\DELL\.m2\repository\org\awaitility\awaitility\4.3.0\awaitility-4.3.0.jar;C:\Users\DELL\.m2\repository\org\hamcrest\hamcrest\3.0\hamcrest-3.0.jar;C:\Users\DELL\.m2\repository\org\junit\jupiter\junit-jupiter\6.0.3\junit-jupiter-6.0.3.jar;C:\Users\DELL\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.0.3\junit-jupiter-api-6.0.3.jar;C:\Users\DELL\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\DELL\.m2\repository\org\junit\platform\junit-platform-commons\6.0.3\junit-platform-commons-6.0.3.jar;C:\Users\DELL\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\DELL\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.0.3\junit-jupiter-params-6.0.3.jar;C:\Users\DELL\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.0.3\junit-jupiter-engine-6.0.3.jar;C:\Users\DELL\.m2\repository\org\junit\platform\junit-platform-engine\6.0.3\junit-platform-engine-6.0.3.jar;C:\Users\DELL\.m2\repository\org\mockito\mockito-core\5.23.0\mockito-core-5.23.0.jar;C:\Users\DELL\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.10\byte-buddy-agent-1.18.10.jar;C:\Users\DELL\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\DELL\.m2\repository\org\mockito\mockito-junit-jupiter\5.23.0\mockito-junit-jupiter-5.23.0.jar;C:\Users\DELL\.m2\repository\org\skyscreamer\jsonassert\1.5.3\jsonassert-1.5.3.jar;C:\Users\DELL\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\DELL\.m2\repository\org\springframework\spring-core\7.0.8\spring-core-7.0.8.jar;C:\Users\DELL\.m2\repository\commons-logging\commons-logging\1.3.6\commons-logging-1.3.6.jar;C:\Users\DELL\.m2\repository\org\springframework\spring-test\7.0.8\spring-test-7.0.8.jar;C:\Users\DELL\.m2\repository\org\xmlunit\xmlunit-core\2.11.0\xmlunit-core-2.11.0.jar;C:\Users\DELL\.m2\repository\org\springframework\security\spring-security-test\7.1.0\spring-security-test-7.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\security\spring-security-core\7.1.0\spring-security-core-7.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\security\spring-security-crypto\7.1.0\spring-security-crypto-7.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\security\spring-security-web\7.1.0\spring-security-web-7.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\spring-web\7.0.8\spring-web-7.0.8.jar;C:\Users\DELL\.m2\repository\org\testcontainers\mssqlserver\1.21.4\mssqlserver-1.21.4.jar;C:\Users\DELL\.m2\repository\org\testcontainers\jdbc\1.21.4\jdbc-1.21.4.jar;C:\Users\DELL\.m2\repository\org\testcontainers\database-commons\1.21.4\database-commons-1.21.4.jar;C:\Users\DELL\.m2\repository\org\testcontainers\junit-jupiter\1.21.4\junit-jupiter-1.21.4.jar;C:\Users\DELL\.m2\repository\org\testcontainers\testcontainers\2.0.5\testcontainers-2.0.5.jar;C:\Users\DELL\.m2\repository\org\apache\commons\commons-compress\1.28.0\commons-compress-1.28.0.jar;C:\Users\DELL\.m2\repository\commons-codec\commons-codec\1.21.0\commons-codec-1.21.0.jar;C:\Users\DELL\.m2\repository\commons-io\commons-io\2.20.0\commons-io-2.20.0.jar;C:\Users\DELL\.m2\repository\org\apache\commons\commons-lang3\3.20.0\commons-lang3-3.20.0.jar;C:\Users\DELL\.m2\repository\org\rnorth\duct-tape\duct-tape\1.0.8\duct-tape-1.0.8.jar;C:\Users\DELL\.m2\repository\org\jetbrains\annotations\17.0.0\annotations-17.0.0.jar;C:\Users\DELL\.m2\repository\com\github\docker-java\docker-java-api\3.7.1\docker-java-api-3.7.1.jar;C:\Users\DELL\.m2\repository\com\github\docker-java\docker-java-transport-zerodep\3.7.1\docker-java-transport-zerodep-3.7.1.jar;C:\Users\DELL\.m2\repository\com\github\docker-java\docker-java-transport\3.7.1\docker-java-transport-3.7.1.jar;C:\Users\DELL\.m2\repository\net\java\dev\jna\jna\5.18.1\jna-5.18.1.jar;C:\Users\DELL\.m2\repository\org\mockftpserver\MockFtpServer\3.2.0\MockFtpServer-3.2.0.jar;"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="Asia/Calcutta"/>
+    <property name="org.jboss.logging.provider" value="slf4j"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="APPLICATION_NAME" value="entity-gateway-mcp"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="IN"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-21.0.11.10-hotspot\bin"/>
+    <property name="sun.java.command" value="C:\Users\DELL\AppData\Local\Temp\surefire14342115923680992266\surefirebooter-20260720121602265_3.jar C:\Users\DELL\AppData\Local\Temp\surefire14342115923680992266 2026-07-20T12-16-01_988-jvmRun1 surefire-20260720121602265_1tmp surefire_0-20260720121602265_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="test" value="DeletionSagaIntegrationTest"/>
+    <property name="surefire.test.class.path" value="\\wsl.localhost\ubuntu\home\vaibhav\projects\entity-gateway-mcp\target\test-classes;\\wsl.localhost\ubuntu\home\vaibhav\projects\entity-gateway-mcp\target\classes;C:\Users\DELL\.m2\repository\org\springframework\ai\spring-ai-starter-mcp-server-webmvc\2.0.0\spring-ai-starter-mcp-server-webmvc-2.0.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-starter-web\4.1.0\spring-boot-starter-web-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-starter-jackson\4.1.0\spring-boot-starter-jackson-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-jackson\4.1.0\spring-boot-jackson-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\4.1.0\spring-boot-starter-tomcat-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat-runtime\4.1.0\spring-boot-starter-tomcat-runtime-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-web-server\4.1.0\spring-boot-web-server-4.1.0.jar;C:\Users\DELL\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\11.0.22\tomcat-embed-core-11.0.22.jar;C:\Users\DELL\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\11.0.22\tomcat-embed-websocket-11.0.22.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-tomcat\4.1.0\spring-boot-tomcat-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-http-converter\4.1.0\spring-boot-http-converter-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-webmvc\4.1.0\spring-boot-webmvc-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-servlet\4.1.0\spring-boot-servlet-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\ai\spring-ai-autoconfigure-mcp-server-webmvc\2.0.0\spring-ai-autoconfigure-mcp-server-webmvc-2.0.0.jar;C:\Users\DELL\.m2\repository\org\springframework\ai\spring-ai-autoconfigure-mcp-server-common\2.0.0\spring-ai-autoconfigure-mcp-server-common-2.0.0.jar;C:\Users\DELL\.m2\repository\org\springframework\ai\spring-ai-mcp\2.0.0\spring-ai-mcp-2.0.0.jar;C:\Users\DELL\.m2\repository\io\modelcontextprotocol\sdk\mcp\2.0.0\mcp-2.0.0.jar;C:\Users\DELL\.m2\repository\io\modelcontextprotocol\sdk\mcp-json-jackson3\2.0.0\mcp-json-jackson3-2.0.0.jar;C:\Users\DELL\.m2\repository\com\networknt\json-schema-validator\3.0.0\json-schema-validator-3.0.0.jar;C:\Users\DELL\.m2\repository\com\ethlo\time\itu\1.14.0\itu-1.14.0.jar;C:\Users\DELL\.m2\repository\tools\jackson\dataformat\jackson-dataformat-yaml\3.1.4\jackson-dataformat-yaml-3.1.4.jar;C:\Users\DELL\.m2\repository\org\snakeyaml\snakeyaml-engine\3.0.1\snakeyaml-engine-3.0.1.jar;C:\Users\DELL\.m2\repository\org\springframework\ai\spring-ai-model\2.0.0\spring-ai-model-2.0.0.jar;C:\Users\DELL\.m2\repository\org\springframework\ai\spring-ai-commons\2.0.0\spring-ai-commons-2.0.0.jar;C:\Users\DELL\.m2\repository\com\knuddels\jtokkit\1.1.0\jtokkit-1.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\ai\spring-ai-template-st\2.0.0\spring-ai-template-st-2.0.0.jar;C:\Users\DELL\.m2\repository\org\antlr\ST4\4.3.4\ST4-4.3.4.jar;C:\Users\DELL\.m2\repository\org\antlr\antlr-runtime\3.5.3\antlr-runtime-3.5.3.jar;C:\Users\DELL\.m2\repository\org\springframework\spring-messaging\7.0.8\spring-messaging-7.0.8.jar;C:\Users\DELL\.m2\repository\io\projectreactor\reactor-core\3.8.6\reactor-core-3.8.6.jar;C:\Users\DELL\.m2\repository\org\reactivestreams\reactive-streams\1.0.4\reactive-streams-1.0.4.jar;C:\Users\DELL\.m2\repository\org\antlr\antlr4-runtime\4.13.1\antlr4-runtime-4.13.1.jar;C:\Users\DELL\.m2\repository\com\github\victools\jsonschema-generator\5.0.0\jsonschema-generator-5.0.0.jar;C:\Users\DELL\.m2\repository\com\github\victools\jsonschema-module-jackson\5.0.0\jsonschema-module-jackson-5.0.0.jar;C:\Users\DELL\.m2\repository\com\github\victools\jsonschema-module-swagger-2\5.0.0\jsonschema-module-swagger-2-5.0.0.jar;C:\Users\DELL\.m2\repository\io\swagger\core\v3\swagger-annotations-jakarta\2.2.38\swagger-annotations-jakarta-2.2.38.jar;C:\Users\DELL\.m2\repository\org\springframework\ai\spring-ai-mcp-annotations\2.0.0\spring-ai-mcp-annotations-2.0.0.jar;C:\Users\DELL\.m2\repository\org\springframework\ai\mcp-spring-webmvc\2.0.0\mcp-spring-webmvc-2.0.0.jar;C:\Users\DELL\.m2\repository\io\modelcontextprotocol\sdk\mcp-core\2.0.0\mcp-core-2.0.0.jar;C:\Users\DELL\.m2\repository\org\springframework\spring-webmvc\7.0.8\spring-webmvc-7.0.8.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\4.1.0\spring-boot-starter-data-jpa-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-starter\4.1.0\spring-boot-starter-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-starter-logging\4.1.0\spring-boot-starter-logging-4.1.0.jar;C:\Users\DELL\.m2\repository\ch\qos\logback\logback-classic\1.5.34\logback-classic-1.5.34.jar;C:\Users\DELL\.m2\repository\ch\qos\logback\logback-core\1.5.34\logback-core-1.5.34.jar;C:\Users\DELL\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.25.4\log4j-to-slf4j-2.25.4.jar;C:\Users\DELL\.m2\repository\org\apache\logging\log4j\log4j-api\2.25.4\log4j-api-2.25.4.jar;C:\Users\DELL\.m2\repository\org\slf4j\jul-to-slf4j\2.0.18\jul-to-slf4j-2.0.18.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\4.1.0\spring-boot-autoconfigure-4.1.0.jar;C:\Users\DELL\.m2\repository\jakarta\annotation\jakarta.annotation-api\3.0.0\jakarta.annotation-api-3.0.0.jar;C:\Users\DELL\.m2\repository\org\yaml\snakeyaml\2.6\snakeyaml-2.6.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\4.1.0\spring-boot-starter-jdbc-4.1.0.jar;C:\Users\DELL\.m2\repository\com\zaxxer\HikariCP\7.0.2\HikariCP-7.0.2.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-data-jpa\4.1.0\spring-boot-data-jpa-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-data-commons\4.1.0\spring-boot-data-commons-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-persistence\4.1.0\spring-boot-persistence-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\data\spring-data-commons\4.1.0\spring-data-commons-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-hibernate\4.1.0\spring-boot-hibernate-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-jpa\4.1.0\spring-boot-jpa-4.1.0.jar;C:\Users\DELL\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.2.0\jakarta.persistence-api-3.2.0.jar;C:\Users\DELL\.m2\repository\org\hibernate\orm\hibernate-core\7.4.1.Final\hibernate-core-7.4.1.Final.jar;C:\Users\DELL\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\DELL\.m2\repository\org\hibernate\models\hibernate-models\1.1.1\hibernate-models-1.1.1.jar;C:\Users\DELL\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.9\jaxb-runtime-4.0.9.jar;C:\Users\DELL\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.9\jaxb-core-4.0.9.jar;C:\Users\DELL\.m2\repository\org\eclipse\angus\angus-activation\2.0.3\angus-activation-2.0.3.jar;C:\Users\DELL\.m2\repository\org\glassfish\jaxb\txw2\4.0.9\txw2-4.0.9.jar;C:\Users\DELL\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\DELL\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\DELL\.m2\repository\org\springframework\spring-orm\7.0.8\spring-orm-7.0.8.jar;C:\Users\DELL\.m2\repository\org\springframework\data\spring-data-jpa\4.1.0\spring-data-jpa-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\spring-aspects\7.0.8\spring-aspects-7.0.8.jar;C:\Users\DELL\.m2\repository\org\aspectj\aspectjweaver\1.9.25.1\aspectjweaver-1.9.25.1.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-jdbc\4.1.0\spring-boot-jdbc-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-sql\4.1.0\spring-boot-sql-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-transaction\4.1.0\spring-boot-transaction-4.1.0.jar;C:\Users\DELL\.m2\repository\com\microsoft\sqlserver\mssql-jdbc\13.4.0.jre11\mssql-jdbc-13.4.0.jre11.jar;C:\Users\DELL\.m2\repository\org\flywaydb\flyway-core\12.4.0\flyway-core-12.4.0.jar;C:\Users\DELL\.m2\repository\tools\jackson\core\jackson-databind\3.1.4\jackson-databind-3.1.4.jar;C:\Users\DELL\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.21\jackson-annotations-2.21.jar;C:\Users\DELL\.m2\repository\tools\jackson\core\jackson-core\3.1.4\jackson-core-3.1.4.jar;C:\Users\DELL\.m2\repository\org\flywaydb\flyway-sqlserver\12.4.0\flyway-sqlserver-12.4.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-flyway\4.1.0\spring-boot-flyway-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot\4.1.0\spring-boot-4.1.0.jar;C:\Users\DELL\.m2\repository\commons-net\commons-net\3.11.1\commons-net-3.11.1.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-starter-security\4.1.0\spring-boot-starter-security-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-security\4.1.0\spring-boot-security-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\security\spring-security-config\7.1.0\spring-security-config-7.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\spring-aop\7.0.8\spring-aop-7.0.8.jar;C:\Users\DELL\.m2\repository\org\springframework\spring-beans\7.0.8\spring-beans-7.0.8.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-starter-oauth2-resource-server\4.1.0\spring-boot-starter-oauth2-resource-server-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-security-oauth2-resource-server\4.1.0\spring-boot-security-oauth2-resource-server-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\security\spring-security-oauth2-jose\7.1.0\spring-security-oauth2-jose-7.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\security\spring-security-oauth2-core\7.1.0\spring-security-oauth2-core-7.1.0.jar;C:\Users\DELL\.m2\repository\com\nimbusds\nimbus-jose-jwt\10.9\nimbus-jose-jwt-10.9.jar;C:\Users\DELL\.m2\repository\org\springframework\security\spring-security-oauth2-resource-server\7.1.0\spring-security-oauth2-resource-server-7.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-starter-validation\4.1.0\spring-boot-starter-validation-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-validation\4.1.0\spring-boot-validation-4.1.0.jar;C:\Users\DELL\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\11.0.22\tomcat-embed-el-11.0.22.jar;C:\Users\DELL\.m2\repository\org\hibernate\validator\hibernate-validator\9.1.0.Final\hibernate-validator-9.1.0.Final.jar;C:\Users\DELL\.m2\repository\jakarta\validation\jakarta.validation-api\3.1.1\jakarta.validation-api-3.1.1.jar;C:\Users\DELL\.m2\repository\org\jboss\logging\jboss-logging\3.6.3.Final\jboss-logging-3.6.3.Final.jar;C:\Users\DELL\.m2\repository\com\fasterxml\classmate\1.7.3\classmate-1.7.3.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-starter-actuator\4.1.0\spring-boot-starter-actuator-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-starter-micrometer-metrics\4.1.0\spring-boot-starter-micrometer-metrics-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-micrometer-metrics\4.1.0\spring-boot-micrometer-metrics-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-micrometer-observation\4.1.0\spring-boot-micrometer-observation-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-actuator-autoconfigure\4.1.0\spring-boot-actuator-autoconfigure-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-actuator\4.1.0\spring-boot-actuator-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-health\4.1.0\spring-boot-health-4.1.0.jar;C:\Users\DELL\.m2\repository\io\micrometer\micrometer-observation\1.17.0\micrometer-observation-1.17.0.jar;C:\Users\DELL\.m2\repository\io\micrometer\micrometer-commons\1.17.0\micrometer-commons-1.17.0.jar;C:\Users\DELL\.m2\repository\io\micrometer\micrometer-jakarta9\1.17.0\micrometer-jakarta9-1.17.0.jar;C:\Users\DELL\.m2\repository\io\micrometer\micrometer-tracing-bridge-otel\1.7.0\micrometer-tracing-bridge-otel-1.7.0.jar;C:\Users\DELL\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\DELL\.m2\repository\io\micrometer\micrometer-tracing\1.7.0\micrometer-tracing-1.7.0.jar;C:\Users\DELL\.m2\repository\io\micrometer\context-propagation\1.2.1\context-propagation-1.2.1.jar;C:\Users\DELL\.m2\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar;C:\Users\DELL\.m2\repository\org\slf4j\slf4j-api\2.0.18\slf4j-api-2.0.18.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\opentelemetry-api\1.62.0\opentelemetry-api-1.62.0.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\opentelemetry-context\1.62.0\opentelemetry-context-1.62.0.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\opentelemetry-common\1.62.0\opentelemetry-common-1.62.0.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.41.1\opentelemetry-semconv-1.41.1.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.62.0\opentelemetry-sdk-common-1.62.0.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.62.0\opentelemetry-sdk-trace-1.62.0.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.62.0\opentelemetry-sdk-1.62.0.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\opentelemetry-extension-trace-propagators\1.62.0\opentelemetry-extension-trace-propagators-1.62.0.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\opentelemetry-exporter-otlp\1.62.0\opentelemetry-exporter-otlp-1.62.0.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.62.0\opentelemetry-sdk-metrics-1.62.0.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.62.0\opentelemetry-sdk-logs-1.62.0.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\opentelemetry-exporter-otlp-common\1.62.0\opentelemetry-exporter-otlp-common-1.62.0.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\opentelemetry-exporter-common\1.62.0\opentelemetry-exporter-common-1.62.0.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\opentelemetry-exporter-sender-okhttp\1.62.0\opentelemetry-exporter-sender-okhttp-1.62.0.jar;C:\Users\DELL\.m2\repository\com\squareup\okhttp3\okhttp-jvm\5.3.2\okhttp-jvm-5.3.2.jar;C:\Users\DELL\.m2\repository\com\squareup\okio\okio-jvm\3.16.4\okio-jvm-3.16.4.jar;C:\Users\DELL\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib\2.3.21\kotlin-stdlib-2.3.21.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.62.0\opentelemetry-sdk-extension-autoconfigure-spi-1.62.0.jar;C:\Users\DELL\.m2\repository\io\micrometer\micrometer-registry-otlp\1.17.0\micrometer-registry-otlp-1.17.0.jar;C:\Users\DELL\.m2\repository\io\micrometer\micrometer-core\1.17.0\micrometer-core-1.17.0.jar;C:\Users\DELL\.m2\repository\org\hdrhistogram\HdrHistogram\2.2.2\HdrHistogram-2.2.2.jar;C:\Users\DELL\.m2\repository\io\opentelemetry\proto\opentelemetry-proto\1.10.0-alpha\opentelemetry-proto-1.10.0-alpha.jar;C:\Users\DELL\.m2\repository\com\google\protobuf\protobuf-java\4.34.2\protobuf-java-4.34.2.jar;C:\Users\DELL\.m2\repository\net\logstash\logback\logstash-logback-encoder\8.1\logstash-logback-encoder-8.1.jar;C:\Users\DELL\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.21.4\jackson-databind-2.21.4.jar;C:\Users\DELL\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.21.4\jackson-core-2.21.4.jar;C:\Users\DELL\.m2\repository\net\javacrumbs\shedlock\shedlock-spring\6.3.0\shedlock-spring-6.3.0.jar;C:\Users\DELL\.m2\repository\net\javacrumbs\shedlock\shedlock-core\6.3.0\shedlock-core-6.3.0.jar;C:\Users\DELL\.m2\repository\org\springframework\spring-context\7.0.8\spring-context-7.0.8.jar;C:\Users\DELL\.m2\repository\org\springframework\spring-expression\7.0.8\spring-expression-7.0.8.jar;C:\Users\DELL\.m2\repository\net\javacrumbs\shedlock\shedlock-provider-jdbc-template\6.3.0\shedlock-provider-jdbc-template-6.3.0.jar;C:\Users\DELL\.m2\repository\org\springframework\spring-jdbc\7.0.8\spring-jdbc-7.0.8.jar;C:\Users\DELL\.m2\repository\org\springframework\spring-tx\7.0.8\spring-tx-7.0.8.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-starter-test\4.1.0\spring-boot-starter-test-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-test\4.1.0\spring-boot-test-4.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\4.1.0\spring-boot-test-autoconfigure-4.1.0.jar;C:\Users\DELL\.m2\repository\com\jayway\jsonpath\json-path\2.10.0\json-path-2.10.0.jar;C:\Users\DELL\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.5\jakarta.xml.bind-api-4.0.5.jar;C:\Users\DELL\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.4\jakarta.activation-api-2.1.4.jar;C:\Users\DELL\.m2\repository\net\minidev\json-smart\2.6.0\json-smart-2.6.0.jar;C:\Users\DELL\.m2\repository\net\minidev\accessors-smart\2.6.0\accessors-smart-2.6.0.jar;C:\Users\DELL\.m2\repository\org\ow2\asm\asm\9.7.1\asm-9.7.1.jar;C:\Users\DELL\.m2\repository\org\assertj\assertj-core\3.27.7\assertj-core-3.27.7.jar;C:\Users\DELL\.m2\repository\net\bytebuddy\byte-buddy\1.18.10\byte-buddy-1.18.10.jar;C:\Users\DELL\.m2\repository\org\awaitility\awaitility\4.3.0\awaitility-4.3.0.jar;C:\Users\DELL\.m2\repository\org\hamcrest\hamcrest\3.0\hamcrest-3.0.jar;C:\Users\DELL\.m2\repository\org\junit\jupiter\junit-jupiter\6.0.3\junit-jupiter-6.0.3.jar;C:\Users\DELL\.m2\repository\org\junit\jupiter\junit-jupiter-api\6.0.3\junit-jupiter-api-6.0.3.jar;C:\Users\DELL\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\DELL\.m2\repository\org\junit\platform\junit-platform-commons\6.0.3\junit-platform-commons-6.0.3.jar;C:\Users\DELL\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\DELL\.m2\repository\org\junit\jupiter\junit-jupiter-params\6.0.3\junit-jupiter-params-6.0.3.jar;C:\Users\DELL\.m2\repository\org\junit\jupiter\junit-jupiter-engine\6.0.3\junit-jupiter-engine-6.0.3.jar;C:\Users\DELL\.m2\repository\org\junit\platform\junit-platform-engine\6.0.3\junit-platform-engine-6.0.3.jar;C:\Users\DELL\.m2\repository\org\mockito\mockito-core\5.23.0\mockito-core-5.23.0.jar;C:\Users\DELL\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.10\byte-buddy-agent-1.18.10.jar;C:\Users\DELL\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\DELL\.m2\repository\org\mockito\mockito-junit-jupiter\5.23.0\mockito-junit-jupiter-5.23.0.jar;C:\Users\DELL\.m2\repository\org\skyscreamer\jsonassert\1.5.3\jsonassert-1.5.3.jar;C:\Users\DELL\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\DELL\.m2\repository\org\springframework\spring-core\7.0.8\spring-core-7.0.8.jar;C:\Users\DELL\.m2\repository\commons-logging\commons-logging\1.3.6\commons-logging-1.3.6.jar;C:\Users\DELL\.m2\repository\org\springframework\spring-test\7.0.8\spring-test-7.0.8.jar;C:\Users\DELL\.m2\repository\org\xmlunit\xmlunit-core\2.11.0\xmlunit-core-2.11.0.jar;C:\Users\DELL\.m2\repository\org\springframework\security\spring-security-test\7.1.0\spring-security-test-7.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\security\spring-security-core\7.1.0\spring-security-core-7.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\security\spring-security-crypto\7.1.0\spring-security-crypto-7.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\security\spring-security-web\7.1.0\spring-security-web-7.1.0.jar;C:\Users\DELL\.m2\repository\org\springframework\spring-web\7.0.8\spring-web-7.0.8.jar;C:\Users\DELL\.m2\repository\org\testcontainers\mssqlserver\1.21.4\mssqlserver-1.21.4.jar;C:\Users\DELL\.m2\repository\org\testcontainers\jdbc\1.21.4\jdbc-1.21.4.jar;C:\Users\DELL\.m2\repository\org\testcontainers\database-commons\1.21.4\database-commons-1.21.4.jar;C:\Users\DELL\.m2\repository\org\testcontainers\junit-jupiter\1.21.4\junit-jupiter-1.21.4.jar;C:\Users\DELL\.m2\repository\org\testcontainers\testcontainers\2.0.5\testcontainers-2.0.5.jar;C:\Users\DELL\.m2\repository\org\apache\commons\commons-compress\1.28.0\commons-compress-1.28.0.jar;C:\Users\DELL\.m2\repository\commons-codec\commons-codec\1.21.0\commons-codec-1.21.0.jar;C:\Users\DELL\.m2\repository\commons-io\commons-io\2.20.0\commons-io-2.20.0.jar;C:\Users\DELL\.m2\repository\org\apache\commons\commons-lang3\3.20.0\commons-lang3-3.20.0.jar;C:\Users\DELL\.m2\repository\org\rnorth\duct-tape\duct-tape\1.0.8\duct-tape-1.0.8.jar;C:\Users\DELL\.m2\repository\org\jetbrains\annotations\17.0.0\annotations-17.0.0.jar;C:\Users\DELL\.m2\repository\com\github\docker-java\docker-java-api\3.7.1\docker-java-api-3.7.1.jar;C:\Users\DELL\.m2\repository\com\github\docker-java\docker-java-transport-zerodep\3.7.1\docker-java-transport-zerodep-3.7.1.jar;C:\Users\DELL\.m2\repository\com\github\docker-java\docker-java-transport\3.7.1\docker-java-transport-3.7.1.jar;C:\Users\DELL\.m2\repository\net\java\dev\jna\jna\5.18.1\jna-5.18.1.jar;C:\Users\DELL\.m2\repository\org\mockftpserver\MockFtpServer\3.2.0\MockFtpServer-3.2.0.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\DELL"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2026-04-21"/>
+    <property name="java.home" value="C:\Program Files\Eclipse Adoptium\jdk-21.0.11.10-hotspot"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="\\wsl.localhost\ubuntu\home\vaibhav\projects\entity-gateway-mcp"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="C:\Users\DELL\AppData\Local\Temp\surefire14342115923680992266\surefirebooter-20260720121602265_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="polyglot.engine.WarnInterpreterOnly" value="false"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.11+10-LTS"/>
+    <property name="LOG_CORRELATION_PATTERN" value="[entity-gateway-mcp,%X{traceId:-},%X{spanId:-}] "/>
+    <property name="user.name" value="DELL"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-21.0.11+10"/>
+    <property name="localRepository" value="C:\Users\DELL\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="C:\Users\DELL\AppData\Local\Temp\"/>
+    <property name="com.zaxxer.hikari.pool_number" value="1"/>
+    <property name="java.version" value="21.0.11"/>
+    <property name="user.dir" value="C:\Windows"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="14868"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-21.0.11.10-hotspot\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Users\DELL\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\DELL\bin;C:\Program Files\Eclipse Adoptium\jdk-21.0.11.10-hotspot\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Git\cmd;C:\Program Files\GitHub CLI;C:\Program Files\Docker\Docker\resources\bin;C:\Users\DELL\AppData\Local\Microsoft\WindowsApps;C:\Users\DELL\AppData\Local\Python\bin;C:\Users\DELL\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\DELL\AppData\Local\Programs\Antigravity IDE\bin;C:\Users\DELL\AppData\Local\Microsoft\WinGet\Packages\Anthropic.ClaudeCode_Microsoft.Winget.Source_8wekyb3d8bbwe;C:\Users\DELL\tools\apache-maven-3.9.16\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl;C:\Users\DELL\AppData\Roaming\Claude\local-agent-mode-sessions\skills-plugin\698bc460-6f90-46db-9503-12d1e591d4c8\30d1715e-8730-4cdc-9674-2ec140e3299b\bin;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="21.0.11+10-LTS"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+    <property name="LOGGED_APPLICATION_NAME" value="[entity-gateway-mcp] "/>
+  </properties>
+  <testcase name="happyPath" classname="com.acme.gateway.it.DeletionSagaIntegrationTest" time="2.072">
+    <system-out><![CDATA[12:16:04.901 [main] INFO org.testcontainers.images.PullPolicy -- Image pull policy will be performed by: DefaultPullPolicy()
+12:16:04.918 [main] INFO org.testcontainers.utility.ImageNameSubstitutor -- Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+12:16:05.084 [Thread-1] INFO org.mockftpserver.fake.FakeFtpServer -- Starting the server on port 0
+12:16:05.101 [Thread-1] INFO org.mockftpserver.fake.FakeFtpServer -- Actual server port is 56291
+12:16:05.139 [main] INFO org.testcontainers.DockerClientFactory -- Testcontainers version: 2.0.5
+12:16:06.409 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Loaded org.testcontainers.dockerclient.NpipeSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+12:16:15.985 [main] INFO org.testcontainers.dockerclient.DockerClientProviderStrategy -- Found Docker environment with local Npipe socket (npipe:////./pipe/docker_engine)
+12:16:16.012 [main] INFO org.testcontainers.DockerClientFactory -- Docker host IP address is localhost
+12:16:16.083 [main] INFO org.testcontainers.DockerClientFactory -- Connected to docker: 
+  Server Version: 29.6.1
+  API Version: 1.55
+  Operating System: Docker Desktop
+  Total Memory: 3821 MB
+  Labels: 
+    com.docker.desktop.address=npipe://\\.\pipe\docker_cli
+12:16:16.401 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Creating container for image: testcontainers/ryuk:0.14.0
+12:16:16.669 [main] INFO org.testcontainers.utility.RegistryAuthLocator -- Credential helper/store (docker-credential-desktop) does not have credentials for https://index.docker.io/v1/
+12:16:17.082 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 is starting: c80159e4229904c20f9fddb14d11ba021651680ba58b55d11da0325cb51e9613
+12:16:17.756 [main] INFO tc.testcontainers/ryuk:0.14.0 -- Container testcontainers/ryuk:0.14.0 started in PT1.3547762S
+12:16:17.769 [main] INFO org.testcontainers.utility.RyukResourceReaper -- Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+12:16:17.770 [main] INFO org.testcontainers.DockerClientFactory -- Checking the system...
+12:16:17.770 [main] INFO org.testcontainers.DockerClientFactory -- ✔︎ Docker server version should be at least 1.6.0
+12:16:17.770 [main] INFO tc.mcr.microsoft.com/mssql/server:2022-latest -- Creating container for image: mcr.microsoft.com/mssql/server:2022-latest
+12:16:17.854 [main] INFO org.testcontainers.utility.RegistryAuthLocator -- Credential helper/store (docker-credential-desktop) does not have credentials for mcr.microsoft.com
+12:16:17.941 [main] INFO tc.mcr.microsoft.com/mssql/server:2022-latest -- Container mcr.microsoft.com/mssql/server:2022-latest is starting: 65929ef7fb6d786ff29f89e110b90bdd1db738e699a63ad24aabdad72d089175
+12:16:18.281 [main] INFO tc.mcr.microsoft.com/mssql/server:2022-latest -- Waiting for database connection to become available at jdbc:sqlserver://localhost:56296 using query 'SELECT 1'
+12:16:34.554 [main] INFO tc.mcr.microsoft.com/mssql/server:2022-latest -- Container mcr.microsoft.com/mssql/server:2022-latest started in PT16.7845721S
+12:16:34.556 [main] INFO tc.mcr.microsoft.com/mssql/server:2022-latest -- Container is started (JDBC URL: jdbc:sqlserver://localhost:56296;encrypt=false)
+12:16:35.934 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.acme.gateway.EntityGatewayApplication for test class com.acme.gateway.it.DeletionSagaIntegrationTest
+12:16:36.443 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.acme.gateway.EntityGatewayApplication for test class com.acme.gateway.it.DeletionSagaIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.1.0)
+
+2026-07-20T12:16:38.368+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.it.DeletionSagaIntegrationTest     : Starting DeletionSagaIntegrationTest using Java 21.0.11 with PID 14868 (started by DELL in C:\Windows)
+2026-07-20T12:16:38.368+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.it.DeletionSagaIntegrationTest     : No active profile set, falling back to 1 default profile: "default"
+2026-07-20T12:16:42.868+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-20T12:16:43.885+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 970 ms. Found 3 JPA repository interfaces.
+2026-07-20T12:16:46.201+05:30  WARN 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-07-20T12:16:46.213+05:30  WARN 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] trationDelegate$BeanPostProcessorChecker : Bean 'serverAnnotatedBeanRegistry' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerAutoConfiguration$ServerMcpAnnotatedBeans] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-07-20T12:16:46.273+05:30  WARN 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] trationDelegate$BeanPostProcessorChecker : Bean 'stringOrNumberMigrationVersionConverter' of type [org.springframework.boot.flyway.autoconfigure.FlywayAutoConfiguration$StringOrNumberToMigrationVersionConverter] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-07-20T12:16:46.289+05:30  WARN 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] trationDelegate$BeanPostProcessorChecker : Bean 'spring.ai.mcp.server.annotation-scanner-org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties' of type [org.springframework.ai.mcp.server.common.autoconfigure.annotations.McpServerAnnotationScannerProperties] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected/applied to a currently created BeanPostProcessor [serverAnnotatedMethodBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies/advisors. If this bean does not have to be post-processed, declare it with ROLE_INFRASTRUCTURE.
+2026-07-20T12:16:47.919+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-07-20T12:16:48.021+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection ConnectionID:105 ClientConnectionId: 1899c4fe-2dfb-4a18-b621-78d9a58860f5
+2026-07-20T12:16:48.025+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-07-20T12:16:48.418+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] org.flywaydb.core.FlywayExecutor         : Database: jdbc:sqlserver://localhost:56296;concatNullYieldsNull=ON;quotedIdentifier=ON;connectRetryInterval=10;connectRetryCount=1;maxResultBuffer=-1;sendTemporalDataTypesAsStringForBulkCopy=true;delayLoadingLobs=true;useFmtOnly=false;vectorTypeSupport=v1;cacheBulkCopyMetadata=false;bulkCopyForBatchInsertAllowEncryptedValueModifications=false;bulkCopyForBatchInsertTableLock=false;bulkCopyForBatchInsertKeepNulls=false;bulkCopyForBatchInsertKeepIdentity=false;bulkCopyForBatchInsertFireTriggers=false;bulkCopyForBatchInsertCheckConstraints=false;bulkCopyForBatchInsertBatchSize=0;useBulkCopyForBatchInsert=false;cancelQueryTimeout=-1;sslProtocol=TLS;calcBigDecimalPrecision=false;useDefaultJaasConfig=false;jaasConfigurationName=SQLJDBCDriver;statementPoolingCacheSize=0;serverPreparedStatementDiscardThreshold=10;enablePrepareOnFirstPreparedStatementCall=false;fips=false;socketTimeout=0;authentication=NotSpecified;authenticationScheme=nativeAuthentication;xopenStates=false;datetimeParameterType=datetime2;sendTimeAsDatetime=true;replication=false;trustStoreType=JKS;trustServerCertificate=false;TransparentNetworkIPResolution=true;iPAddressPreference=IPv4First;serverNameAsACE=false;sendStringParametersAsUnicode=true;selectMethod=direct;responseBuffering=adaptive;queryTimeout=-1;packetSize=8000;multiSubnetFailover=false;loginTimeout=5;lockTimeout=-1;lastUpdateCount=true;useDefaultGSSCredential=false;prepareMethod=prepexec;encrypt=false;disableStatementPooling=true;columnEncryptionSetting=Disabled;applicationName=Microsoft JDBC Driver for SQL Server;applicationIntent=readwrite; (Microsoft SQL Server 16.0)
+2026-07-20T12:16:48.761+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table [master].[dbo].[flyway_schema_history] does not exist yet
+2026-07-20T12:16:48.773+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] o.f.core.internal.command.DbValidate     : Successfully validated 3 migrations (execution time 00:00.116s)
+2026-07-20T12:16:48.856+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table [master].[dbo].[flyway_schema_history] ...
+2026-07-20T12:16:48.961+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] o.f.core.internal.command.DbMigrate      : Current version of schema [dbo]: << Empty Schema >>
+2026-07-20T12:16:49.025+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] o.f.core.internal.command.DbMigrate      : Migrating schema [dbo] to version "1 - baseline profiles signatures"
+2026-07-20T12:16:49.195+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] o.f.core.internal.command.DbMigrate      : Migrating schema [dbo] to version "2 - file deletion ledger"
+2026-07-20T12:16:49.389+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] o.f.core.internal.command.DbMigrate      : Migrating schema [dbo] to version "3 - shedlock"
+2026-07-20T12:16:49.453+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] o.f.core.internal.command.DbMigrate      : Successfully applied 3 migrations to schema [dbo], now at version v3 (execution time 00:00.059s)
+2026-07-20T12:16:50.373+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-07-20T12:16:50.769+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-07-20T12:16:53.352+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-20T12:16:53.763+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:sqlserver://localhost:56296;concatNullYieldsNull=ON;quotedIdentifier=ON;connectRetryInterval=10;connectRetryCount=1;maxResultBuffer=-1;sendTemporalDataTypesAsStringForBulkCopy=true;delayLoadingLobs=true;useFmtOnly=false;vectorTypeSupport=v1;cacheBulkCopyMetadata=false;bulkCopyForBatchInsertAllowEncryptedValueModifications=false;bulkCopyForBatchInsertTableLock=false;bulkCopyForBatchInsertKeepNulls=false;bulkCopyForBatchInsertKeepIdentity=false;bulkCopyForBatchInsertFireTriggers=false;bulkCopyForBatchInsertCheckConstraints=false;bulkCopyForBatchInsertBatchSize=0;useBulkCopyForBatchInsert=false;cancelQueryTimeout=-1;sslProtocol=TLS;calcBigDecimalPrecision=false;useDefaultJaasConfig=false;jaasConfigurationName=SQLJDBCDriver;statementPoolingCacheSize=0;serverPreparedStatementDiscardThreshold=10;enablePrepareOnFirstPreparedStatementCall=false;fips=false;socketTimeout=0;authentication=NotSpecified;authenticationScheme=nativeAuthentication;xopenStates=false;datetimeParameterType=datetime2;sendTimeAsDatetime=true;replication=false;trustStoreType=JKS;trustServerCertificate=false;TransparentNetworkIPResolution=true;iPAddressPreference=IPv4First;serverNameAsACE=false;sendStringParametersAsUnicode=true;selectMethod=direct;responseBuffering=adaptive;queryTimeout=-1;packetSize=8000;multiSubnetFailover=false;loginTimeout=5;lockTimeout=-1;lastUpdateCount=true;useDefaultGSSCredential=false;prepareMethod=prepexec;encrypt=false;disableStatementPooling=true;columnEncryptionSetting=Disabled;applicationName=Microsoft JDBC Driver for SQL Server;applicationIntent=readwrite;]
+	Database driver: Microsoft JDBC Driver 13.4 for SQL Server
+	Database dialect: SQLServerDialect
+	Database version: 16.0
+	Default catalog/schema: master/dbo
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: 128
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-20T12:16:58.202+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-20T12:16:58.919+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-20T12:16:59.720+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-07-20T12:17:12.618+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] o.s.a.m.s.c.a.McpServerAutoConfiguration : Enable tools capabilities, notification: true
+2026-07-20T12:17:13.185+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] o.s.a.m.s.c.a.McpServerAutoConfiguration : Registered tools: 6
+2026-07-20T12:17:16.242+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.it.DeletionSagaIntegrationTest     : Started DeletionSagaIntegrationTest in 39.425 seconds (process running for 73.627)
+2026-07-20T12:17:17.592+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.domain.service.DeletionTxSteps     : deletion.initiated ledgerId=0e22e907-26b5-4df8-9cf2-92f76d446db8 signatureId=0944fa89-4a29-4cc3-9e4f-eac800466ba8 requestId=1b16dba3-6d4f-4100-baa5-0e468d0895e6 by=it-agent@test
+2026-07-20T12:17:17.721+05:30  INFO 14868 --- [entity-gateway-mcp] [       Thread-1] [entity-gateway-mcp,,] org.mockftpserver.fake.FakeFtpServer     : Connection accepted from host /127.0.0.1
+2026-07-20T12:17:17.738+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-20] [entity-gateway-mcp,,] o.m.core.command.ConnectCommandHandler   : Sending reply [220 Service ready for new user. (MockFtpServer 3.2.0; see http://mockftpserver.org)]
+2026-07-20T12:17:17.766+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-20] [entity-gateway-mcp,,] o.m.core.session.DefaultSession          : Received command: [USER gw]
+2026-07-20T12:17:17.769+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-20] [entity-gateway-mcp,,] o.m.fake.command.UserCommandHandler      : Sending reply [331 User name okay, need password.]
+2026-07-20T12:17:17.799+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-20] [entity-gateway-mcp,,] o.m.core.session.DefaultSession          : Received command: [PASS secret]
+2026-07-20T12:17:17.800+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-20] [entity-gateway-mcp,,] o.m.fake.command.PassCommandHandler      : Sending reply [230 User logged in, proceed.]
+2026-07-20T12:17:17.802+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-20] [entity-gateway-mcp,,] o.m.core.session.DefaultSession          : Received command: [DELE /signatures/697d5cb4-8ec4-4a4a-a3ac-6cef92c4cd83.p7s]
+2026-07-20T12:17:17.802+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-20] [entity-gateway-mcp,,] o.m.fake.command.DeleCommandHandler      : Sending reply [250 "/signatures/697d5cb4-8ec4-4a4a-a3ac-6cef92c4cd83.p7s" deleted.] args=[/signatures/697d5cb4-8ec4-4a4a-a3ac-6cef92c4cd83.p7s]
+2026-07-20T12:17:17.804+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.acme.gateway.ftp.CommonsNetFtpGateway  : FTP delete OK path=/signatures/697d5cb4-8ec4-4a4a-a3ac-6cef92c4cd83.p7s reply=250
+2026-07-20T12:17:17.832+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-20] [entity-gateway-mcp,,] o.m.core.session.DefaultSession          : Received command: [QUIT]
+2026-07-20T12:17:17.832+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-20] [entity-gateway-mcp,,] o.m.fake.command.QuitCommandHandler      : Sending reply [221 Service closing control connection.]
+2026-07-20T12:17:17.833+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.d.s.SignatureDeletionOrchestrator  : deletion.ftp_ok ledgerId=0e22e907-26b5-4df8-9cf2-92f76d446db8 outcome=DELETED
+2026-07-20T12:17:17.847+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.domain.service.DeletionTxSteps     : deletion.ftp_deleted ledgerId=0e22e907-26b5-4df8-9cf2-92f76d446db8
+2026-07-20T12:17:17.897+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.domain.service.DeletionTxSteps     : deletion.completed ledgerId=0e22e907-26b5-4df8-9cf2-92f76d446db8 signatureId=0944fa89-4a29-4cc3-9e4f-eac800466ba8
+]]></system-out>
+    <system-err><![CDATA[Jul 20, 2026 12:16:19 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:1 ClientConnectionId: 5eeed3b7-c617-4818-8e08-591179fd2917 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:19 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:1 ClientConnectionId: 6250d15d-fed1-42dd-a130-6a156a607e0e Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:19 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:2 ClientConnectionId: f5205da8-3fa8-424b-9ebc-e16cd9516115 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:19 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:2 ClientConnectionId: 066dcab2-601b-4d40-9dc8-f2c7397a2eb8 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:19 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:3 ClientConnectionId: 444bb89e-d64a-465e-b39a-08a60be3c1e9 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:19 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:3 ClientConnectionId: 599562f2-26c3-416f-9931-823bf3133b5f Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:20 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:4 ClientConnectionId: 0297b26f-146c-4e96-9113-75c734f6b7f9 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:20 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:4 ClientConnectionId: 08e6eced-64c7-4e51-b7c6-a7fbdfe653d0 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:20 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:5 ClientConnectionId: 50c56050-e061-4afb-95cc-29f9d8e2eadc Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:20 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:5 ClientConnectionId: 6e880a58-5e88-46bb-b605-20e7d13e56ee Prelogin error: host localhost port 56296 Error reading prelogin response: An established connection was aborted by the software in your host machine ClientConnectionId:6e880a58-5e88-46bb-b605-20e7d13e56ee
+Jul 20, 2026 12:16:20 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:6 ClientConnectionId: 27bcfc09-0004-458e-b092-44d09ca9c96c Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:20 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:6 ClientConnectionId: 25eb3823-ce91-423f-a6a9-ebd7dd10a34f Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:20 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:7 ClientConnectionId: cb329c68-8253-419d-8299-5cb3317b2559 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:20 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:7 ClientConnectionId: ee2ed19d-2251-4441-b56c-e5dd1f8a6f62 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:20 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:8 ClientConnectionId: ce5ddd4d-9a07-49bd-9926-20e95e187f3a Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:20 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:8 ClientConnectionId: 6d0d43cd-047f-4c16-96df-b6378bbf1193 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:20 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:9 ClientConnectionId: 7303b420-ecc1-42c3-9c44-93f05be25f73 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:20 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:9 ClientConnectionId: 58166ab2-919d-405f-a57e-1cc3046fd10f Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:20 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:10 ClientConnectionId: 286b3d74-a009-4fa4-8083-9479eb75b233 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:20 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:10 ClientConnectionId: 73e709ce-5d59-4aab-acab-ed0d706cc1cc Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:21 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:11 ClientConnectionId: b6b50bd7-21c6-4a4a-977e-cac6e3eb5767 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:21 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:11 ClientConnectionId: 1027e971-3f69-414a-86e1-1de42e7b5345 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:21 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:12 ClientConnectionId: 92e84b6e-f7f1-4eff-8980-ce6e56ce350d Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:21 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:12 ClientConnectionId: 6fb8a64c-163e-4ef1-a119-057f71bf724c Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:21 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:13 ClientConnectionId: 48495055-d337-448c-834b-6210b9404b23 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:21 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:13 ClientConnectionId: 9ff016b9-d189-4c04-a42e-2f379632c007 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:21 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:14 ClientConnectionId: 48d6895a-0550-4c5e-acd2-3d18bc66584c Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:21 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:14 ClientConnectionId: 1480b01a-9d81-490d-82cc-d0a6f5e7b126 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:21 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:15 ClientConnectionId: 4c0597cc-f373-4899-b11d-892b6f9bc236 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:21 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:15 ClientConnectionId: c5ea69fd-c7a8-430a-98d4-d00f0bc02579 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:21 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:16 ClientConnectionId: 07bbc9dc-de1d-4ac2-a799-f8149be755d1 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:21 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:16 ClientConnectionId: 54b83917-ab49-49a1-b589-396e2e43fc03 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:21 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:17 ClientConnectionId: 46259851-a758-4b6f-98f4-0a7b1ea0cb18 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:21 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:17 ClientConnectionId: c98f926c-614b-46ff-85fd-791d8fe01167 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:22 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:18 ClientConnectionId: a87271db-eb6d-4db0-b9bb-d86476ba5f2b Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:22 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:18 ClientConnectionId: 7d71bf5f-0787-4ce7-a26b-cee26641474a Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:22 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:19 ClientConnectionId: 045bc72e-89f4-4271-be7a-897e190b2437 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:22 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:19 ClientConnectionId: fa7f0457-1777-408d-b0d7-a340da46277f Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:22 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:20 ClientConnectionId: 2b950d89-3c7f-48d5-ba96-a7995e16e3e0 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:22 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:20 ClientConnectionId: 60b07836-6113-430a-a0a5-a8e6c49c3d85 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:22 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:21 ClientConnectionId: c097b82f-8942-49d4-a7a2-cd57e25fe944 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:22 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:21 ClientConnectionId: 5311848d-2c38-4dfd-a068-1ad5f6497a97 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:22 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:22 ClientConnectionId: fa701005-565d-4d21-b451-4f843cf70879 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:22 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:22 ClientConnectionId: 433f451d-b308-4ab9-90dc-e21e88425cb0 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:22 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:23 ClientConnectionId: e88c9d12-c8fd-41ba-934d-1c0fe25785b3 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:22 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:23 ClientConnectionId: 4b4b4bee-281c-4664-88d0-7c343e8b944b Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:22 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:24 ClientConnectionId: 4661a4c5-34cb-4cd9-8727-b41284ab0b3a Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:22 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:24 ClientConnectionId: f944a47c-10e6-4ae2-92b7-b5fcaead4f65 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:22 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:25 ClientConnectionId: 45a2866c-edd7-44dc-87f8-246b8d35a1cd Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:22 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:25 ClientConnectionId: 2393cdfc-e3b2-4624-b9b7-869edf09d7cf Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:23 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:26 ClientConnectionId: f1181622-5d44-4be4-8567-1fe61c2d4ed0 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:23 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:26 ClientConnectionId: 1084efde-db6f-4bee-a68a-118f3fe17327 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:23 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:27 ClientConnectionId: 40fdb08a-e2c8-475c-a3dc-bbaac6d2910e Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:23 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:27 ClientConnectionId: 8e1e7067-bde2-49be-937e-5cda9d99d33c Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:23 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:28 ClientConnectionId: 5b1dfcd5-aefb-4167-9f3f-e112444dc72e Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:23 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:28 ClientConnectionId: fb2cf4d2-fe52-4aa4-a657-f3c10338c518 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:23 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:29 ClientConnectionId: a3345cb1-4aef-45f7-825a-9cfe339d2e5a Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:23 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:29 ClientConnectionId: f4f21d3b-9cee-4489-a5c9-99570802ee9b Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:23 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:30 ClientConnectionId: a42996ec-2072-49b3-94d4-0fe9fd254cf4 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:23 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:30 ClientConnectionId: d3a19c36-bfae-4abc-aa49-38ad52873487 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:23 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:31 ClientConnectionId: 83ba45df-41fe-4567-a19c-f1c0fc23b295 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:23 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:31 ClientConnectionId: af083150-8024-41bb-bb1f-266f65c2d9d0 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:23 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:32 ClientConnectionId: 56352486-1c0b-4742-906f-f9bbf2c2a356 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:23 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:32 ClientConnectionId: 07489c38-0a89-4ad7-b169-efd5befafd84 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:24 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:33 ClientConnectionId: f79dd435-a157-4e95-8a2f-f44aee8561ad Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:24 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:33 ClientConnectionId: fb08fff4-6a3b-40a0-aa2b-cd424dc0e1c6 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:24 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:34 ClientConnectionId: 3722e400-e1c5-481f-821f-d185afca6e31 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:24 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:34 ClientConnectionId: e0bc7e88-9928-4a7e-9d2d-19406af8fe4e Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:24 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:35 ClientConnectionId: 8d035c6c-1a95-4b18-8bba-25242f98e9de Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:24 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:35 ClientConnectionId: 29b73bc9-5d00-4de7-aed7-f4c8d268ddf0 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:24 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:36 ClientConnectionId: e2b32e7a-1642-40a6-a3e4-9fc2c2f448fe Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:24 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:36 ClientConnectionId: eccdaf73-95e8-48d1-9208-0349c42183d5 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:24 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:37 ClientConnectionId: f778314d-9e06-4817-9c2c-06ba3a04becd Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:24 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:37 ClientConnectionId: c70aa90e-d2ab-4b38-b3f1-53baee9108a7 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:24 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:38 ClientConnectionId: b79c7f08-8400-4c95-9284-8405dbee5ac9 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:24 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:38 ClientConnectionId: 7e3c97e0-aefd-4b9d-a89c-dbfe4fe52bfc Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:24 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:39 ClientConnectionId: 3e726eaf-23b0-4930-9a8a-ea8f066bf55e Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:24 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:39 ClientConnectionId: e5538f2e-649e-4357-8391-b2b6a844d972 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:25 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:40 ClientConnectionId: cf3952c7-7538-49d5-b0c8-5e87dec53338 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:25 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:40 ClientConnectionId: ffdd3f62-d1c2-408c-858d-7af47356a292 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:25 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:41 ClientConnectionId: 56152352-af0e-4e75-b23d-c12a820fe393 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:25 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:41 ClientConnectionId: db3beaec-3c1a-4602-8728-21ec971286b9 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:25 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:42 ClientConnectionId: d87b6e71-b052-4a49-a855-047192f45e1e Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:25 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:42 ClientConnectionId: 79623354-55a9-4203-ba1c-93a6c00bd45d Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:25 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:43 ClientConnectionId: 1daed25e-7108-45f2-b496-1f6717bea487 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:25 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:43 ClientConnectionId: 34e32dd1-acf2-4a7b-91a7-a3e5e6c563a8 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:25 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:44 ClientConnectionId: 758a48af-2fdf-47c7-b6c4-ebfed4609437 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:25 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:44 ClientConnectionId: c20ce610-f25c-4d18-bc72-b951d798b8aa Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:25 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:45 ClientConnectionId: 7069aa63-f108-48c5-ac2b-0444d7773530 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:25 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:45 ClientConnectionId: 100a8108-fd1d-4d3c-8f48-3164030bcc12 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:25 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:46 ClientConnectionId: 86203571-bc24-4d3e-91e0-f68667def292 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:25 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:46 ClientConnectionId: ee196098-7df4-4546-9c44-2fb5f867d902 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:26 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:47 ClientConnectionId: 28d1c918-18e7-4618-90d9-35268e73e3be Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:26 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:47 ClientConnectionId: 08bc2f39-c429-4df2-9d18-8b4d9f9eae13 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:26 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:48 ClientConnectionId: d31143e8-88bb-44c8-85d7-3acc4ebb45ac Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:26 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:48 ClientConnectionId: aa555aa4-091f-4e8b-ada9-ee2d4ac180f9 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:26 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:49 ClientConnectionId: 16b6f82d-fae4-486c-affc-ccc78ef67392 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:26 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:49 ClientConnectionId: 67cf68aa-362e-4492-886c-9eeaf39228e6 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:26 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:50 ClientConnectionId: b9cd8b42-693f-4c31-af28-ba92381d1ef8 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:26 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:50 ClientConnectionId: 19f4cae5-fa6a-4dfe-a31f-5562af61d951 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:26 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:51 ClientConnectionId: 6c2d60d7-9be0-4ab1-b540-a97731cf0ee7 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:26 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:51 ClientConnectionId: 512b4439-796e-4020-9a10-1a264fb11139 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:26 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:52 ClientConnectionId: 87ab81a0-ec0c-4484-8f88-9923ffbe1be4 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:26 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:52 ClientConnectionId: 84f5eae7-3edc-42fe-a049-a01b60711855 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:26 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:53 ClientConnectionId: f0fe9ea8-43b0-43f3-82ed-3e9709fd4ab1 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:26 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:53 ClientConnectionId: f5dd9c60-07e8-4c24-a6b1-dc5483e4a270 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:26 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:54 ClientConnectionId: f7659932-19ab-496b-a71b-e04c38a01675 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:27 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:54 ClientConnectionId: b05975e5-c3fc-449b-8943-a3539bdc4256 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:27 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:55 ClientConnectionId: d3462a65-2d09-4f5e-b682-5a0ae20ca252 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:27 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:55 ClientConnectionId: c25c0878-9f0e-489c-bb7b-1554c2199980 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:27 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:56 ClientConnectionId: 0e8183ab-463c-43d5-95b5-763de8eeb6b8 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:27 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:56 ClientConnectionId: fbc1c675-212b-44bd-a865-f080681c93b9 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:27 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:57 ClientConnectionId: b554eb16-c092-48cb-82a9-d00deacc99d8 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:27 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:57 ClientConnectionId: 2ef64418-434b-4878-802f-edc29cba67e6 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:27 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:58 ClientConnectionId: 571b40a7-e599-4b3e-8fbd-d9572244bf1c Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:27 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:58 ClientConnectionId: 774d3d12-3268-47ca-aeb5-ab0f44bb1c29 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:27 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:59 ClientConnectionId: 33a7c4e2-b89a-4cd6-a7de-d4bf9ad6c13a Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:27 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:59 ClientConnectionId: 4575925f-d084-4e4b-a670-1cc95834dc44 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:27 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:60 ClientConnectionId: bae82575-8422-43ff-a106-7d05c8b873a9 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:27 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:60 ClientConnectionId: 72056038-f9e6-469d-8c41-973f7df19f4e Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:27 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:61 ClientConnectionId: 45116ab7-7bba-4009-b26b-c37c65bb53fa Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:27 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:61 ClientConnectionId: 3241cd2b-4e3f-4335-9f5e-0975ecda7fbb Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:28 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:62 ClientConnectionId: 1a55b956-c377-40a6-adaf-4a7ea75c39c2 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:28 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:62 ClientConnectionId: d926f14c-5c3d-47ed-9431-6c30e4171696 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:28 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:63 ClientConnectionId: 8206a9da-523e-4e9d-b0de-d8f8ff1be3e6 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:28 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:63 ClientConnectionId: 5781fac4-5e65-4113-bc65-c3f5008d6ebb Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:28 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:64 ClientConnectionId: fcdd6ef8-b97a-4c8e-838a-c22a5926e61b Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:28 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:64 ClientConnectionId: 13e1381c-f54a-417d-a3f0-ddd721af6aae Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:28 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:65 ClientConnectionId: fdb28afd-4d34-4833-97aa-d4d4d77b7daa Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:28 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:65 ClientConnectionId: beaf2d87-5e96-43df-9571-2d28f5c8e024 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:28 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:66 ClientConnectionId: 528edb68-b3c8-4271-a119-f7d5023eb0ba Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:28 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:66 ClientConnectionId: f483473f-50aa-4412-9216-c46a0cb83304 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:28 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:67 ClientConnectionId: 5513bb0e-10ae-408c-9bbf-ce677ed52e6f Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:28 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:67 ClientConnectionId: 4459a2da-f05b-43cc-8203-fda5f3baa28d Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:28 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:68 ClientConnectionId: 2e4d81ab-7fa8-459f-868b-0debc18ffdcc Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:28 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:68 ClientConnectionId: b3d57b81-76ec-4fa2-88ba-3da961dad873 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:28 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:69 ClientConnectionId: 19f636f9-2488-4d4e-a5a3-c34d948eb56a Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:28 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:69 ClientConnectionId: e9a6ae36-7f3b-462f-b101-218836db6ad1 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:29 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:70 ClientConnectionId: c0f938be-4f2b-484b-94ab-3fdc6536794a Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:29 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:70 ClientConnectionId: d691356b-7128-4297-ac5d-f54957f805c6 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:29 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:71 ClientConnectionId: 470774ce-7876-4c2d-993c-9797f8ad4a4b Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:29 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:71 ClientConnectionId: 08babb3a-db9c-4d5d-a422-47cf9d949b10 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:29 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:72 ClientConnectionId: e3c5d99b-5461-4344-a800-b76349de0cf5 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:29 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:72 ClientConnectionId: d46597ec-3b6f-4edd-955c-ba1a41b21a63 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:29 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:73 ClientConnectionId: 479f6272-cb86-43f4-8d40-e76f54eeaca9 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:29 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:73 ClientConnectionId: 7aadef17-5817-4e8a-a5e3-8a72b341d704 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:29 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:74 ClientConnectionId: 74d050d2-bc3e-4091-b82c-e68cecb389d1 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:29 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:74 ClientConnectionId: 9444f8b8-9a80-4ef5-a301-b56abc18242c Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:29 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:75 ClientConnectionId: 2190c99a-f768-48dc-b94f-4abb305b0fbc Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:29 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:75 ClientConnectionId: 6d1e5c84-ef8c-4a83-8f7a-2a6fdcc295a7 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:29 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:76 ClientConnectionId: 26a20c00-26e7-447a-a264-f85691856986 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:29 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:76 ClientConnectionId: a8cb9862-6e34-4e85-92f8-45aaa926f38d Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:29 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:77 ClientConnectionId: ab86cb0f-df56-49e4-9a5f-f7d1b99327b2 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:29 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:77 ClientConnectionId: e3f1ad92-961f-4759-b2ee-c2dba685d6ef Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:30 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:78 ClientConnectionId: 886535f4-9afb-42da-a2fa-d01fef8d8d55 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:30 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:78 ClientConnectionId: 2326d043-684a-4ef4-8645-257a0840ad13 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:30 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:79 ClientConnectionId: 7a27f927-f01e-4c5e-ab76-bcbffb9ce7e7 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:30 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:79 ClientConnectionId: f084ad51-3792-4fb8-a97e-40a54072d3c3 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:30 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:80 ClientConnectionId: cd453f27-267d-4ac1-8975-28f30428255a Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:30 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:80 ClientConnectionId: d77004eb-f8fd-4b4c-9a89-dae5233cc441 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:30 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:81 ClientConnectionId: 59c4b380-3002-4b72-b117-d7ca00480353 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:30 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:81 ClientConnectionId: 5f7d34a0-3252-44d9-a82f-51308f783f08 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:30 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:82 ClientConnectionId: ec830b2a-9bc6-406e-b07c-5717d9d3d85e Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:30 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:82 ClientConnectionId: 0c7dce10-b818-41d0-9ca0-dd437095e5f2 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:30 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:83 ClientConnectionId: 71022469-2d2e-4dc9-a8ce-d1c064736d7e Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:30 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:83 ClientConnectionId: 2af63b16-17fa-4680-948f-3c8e732b3fc6 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:30 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:84 ClientConnectionId: ca240529-b41b-4bb1-bf58-a4c6093cd13b Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:30 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:84 ClientConnectionId: 05fd7fa7-bc10-4e91-9bf2-6526ba03b9a7 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:30 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:85 ClientConnectionId: 0238caa0-ce0a-4fa7-8791-8b722a2f020d Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:30 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:85 ClientConnectionId: 7df03925-1ac0-4b16-a2be-7b4102b71a3e Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:31 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:86 ClientConnectionId: 85181a2d-8d04-4f76-aadf-99c5defc5269 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:31 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:86 ClientConnectionId: 266d0e9d-9389-4ae7-959b-9153320790eb Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:31 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:87 ClientConnectionId: 28bb3369-ec9d-4bfe-b9e4-97afc199cb7d Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:31 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:87 ClientConnectionId: acc3d1de-0a5d-4667-940b-66d1cf2a904f Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:31 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:88 ClientConnectionId: 68870a69-fbd8-47b8-86f7-e72235377943 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:31 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:88 ClientConnectionId: cda0c83e-757c-4ce4-ba7e-478663cebddc Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:31 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:89 ClientConnectionId: df37dad6-0625-4a71-be02-6682e5ca4edb Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:31 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:89 ClientConnectionId: 5ed5d568-dd70-45b5-8f9d-5e1819d55b65 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:31 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:90 ClientConnectionId: e1310517-bdd7-4024-b032-8077cf64fadf Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:31 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:90 ClientConnectionId: 9da39aba-88d0-424e-a0a4-59ede4b7cb82 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:31 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:91 ClientConnectionId: 86708dce-23f5-42a1-a0a3-7ade5dc6d9e6 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:31 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:91 ClientConnectionId: 85c1a765-7c7f-43fa-9b8a-88eab379f486 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:31 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:92 ClientConnectionId: ba044193-c19d-4c9a-a29f-3c8757fbeead Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:31 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:92 ClientConnectionId: c8e73744-854b-43c7-bf80-8364c915672b Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:32 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:93 ClientConnectionId: a64ac2b4-68fa-4dd7-8a24-2642f4d01417 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:32 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:93 ClientConnectionId: a341284d-81de-4811-908a-b1568242ac9c Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:32 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:94 ClientConnectionId: b370338e-47e5-4538-9269-41d6a2d566fc Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:32 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:94 ClientConnectionId: 7ff33e54-e6e4-4368-a615-6a6d938ea4c3 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:32 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:95 ClientConnectionId: 3a2a126a-167b-4ea6-a605-a3c51b158ad5 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:32 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:95 ClientConnectionId: e9121cf1-05a1-4cd1-9765-875f9122adb0 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:32 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:96 ClientConnectionId: c548e5f7-a3d3-4607-85f0-aff8cd5d3ff3 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:32 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:96 ClientConnectionId: 17a3f666-f3c6-4bee-a760-1d13f3058939 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:32 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:97 ClientConnectionId: 003dcaa6-cfdf-41f7-8759-1cf962463706 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:32 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:97 ClientConnectionId: e0250680-0e89-463c-923d-58c7d22e99c1 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:32 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:98 ClientConnectionId: d79a26f1-23a2-46a8-9f6e-48b02d33b722 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:32 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:98 ClientConnectionId: bde7b35e-f79f-4709-88ed-f2b440479a01 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:32 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:99 ClientConnectionId: 7c4ded4f-de02-4d97-be42-25ecb6ffd25f Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:32 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:99 ClientConnectionId: 711c62c1-009e-4f4c-a428-e6c8af46c8ee Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:33 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:100 ClientConnectionId: f61de538-f939-4b5a-ad07-f563663564b7 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:33 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:100 ClientConnectionId: 4880397a-b4ac-4d2e-84d9-80c10344a560 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:33 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:101 ClientConnectionId: 9dd1da28-0e1f-4e8e-905f-81c7f93e969e Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:33 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:101 ClientConnectionId: e133fea5-3cbe-4b2b-8084-ac96898a8c2c Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:33 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:102 ClientConnectionId: 8e83c674-69e4-45aa-a5b4-2043b0d6ac28 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:33 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:102 ClientConnectionId: 6ddc64a9-19a9-48bd-9206-ca80bd410b50 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:33 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:103 ClientConnectionId: 659c49fa-0025-4e9a-9418-d441a6d1aa2d Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Jul 20, 2026 12:16:33 PM com.microsoft.sqlserver.jdbc.SQLServerConnection prelogin
+WARNING: ConnectionID:103 ClientConnectionId: 288d9b5a-853f-44e9-9c68-49064e767626 Prelogin error: host localhost port 56296 Unexpected end of prelogin response after 0 bytes read
+Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (C:\Users\DELL\.m2\repository\net\bytebuddy\byte-buddy-agent\1.18.10\byte-buddy-agent-1.18.10.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+  </testcase>
+  <testcase name="scenarioA_finalizationFails_thenReconcilerHeals" classname="com.acme.gateway.it.DeletionSagaIntegrationTest" time="0.447">
+    <system-out><![CDATA[2026-07-20T12:17:18.477+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.domain.service.DeletionTxSteps     : deletion.initiated ledgerId=e39a9611-839f-4695-b3f9-1366b0083cc1 signatureId=f8953828-09d9-4730-956c-259630d340f2 requestId=5f05fd0c-ad8f-446a-a349-4b9983ac4a13 by=it-agent@test
+2026-07-20T12:17:18.502+05:30  INFO 14868 --- [entity-gateway-mcp] [       Thread-1] [entity-gateway-mcp,,] org.mockftpserver.fake.FakeFtpServer     : Connection accepted from host /127.0.0.1
+2026-07-20T12:17:18.504+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-21] [entity-gateway-mcp,,] o.m.core.command.ConnectCommandHandler   : Sending reply [220 Service ready for new user. (MockFtpServer 3.2.0; see http://mockftpserver.org)]
+2026-07-20T12:17:18.532+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-21] [entity-gateway-mcp,,] o.m.core.session.DefaultSession          : Received command: [USER gw]
+2026-07-20T12:17:18.532+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-21] [entity-gateway-mcp,,] o.m.fake.command.UserCommandHandler      : Sending reply [331 User name okay, need password.]
+2026-07-20T12:17:18.559+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-21] [entity-gateway-mcp,,] o.m.core.session.DefaultSession          : Received command: [PASS secret]
+2026-07-20T12:17:18.560+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-21] [entity-gateway-mcp,,] o.m.fake.command.PassCommandHandler      : Sending reply [230 User logged in, proceed.]
+2026-07-20T12:17:18.581+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-21] [entity-gateway-mcp,,] o.m.core.session.DefaultSession          : Received command: [DELE /signatures/d396d978-8f8c-430e-b4de-f6a9280c0c6f.p7s]
+2026-07-20T12:17:18.581+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-21] [entity-gateway-mcp,,] o.m.fake.command.DeleCommandHandler      : Sending reply [250 "/signatures/d396d978-8f8c-430e-b4de-f6a9280c0c6f.p7s" deleted.] args=[/signatures/d396d978-8f8c-430e-b4de-f6a9280c0c6f.p7s]
+2026-07-20T12:17:18.581+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.acme.gateway.ftp.CommonsNetFtpGateway  : FTP delete OK path=/signatures/d396d978-8f8c-430e-b4de-f6a9280c0c6f.p7s reply=250
+2026-07-20T12:17:18.616+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-21] [entity-gateway-mcp,,] o.m.core.session.DefaultSession          : Received command: [QUIT]
+2026-07-20T12:17:18.617+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-21] [entity-gateway-mcp,,] o.m.fake.command.QuitCommandHandler      : Sending reply [221 Service closing control connection.]
+2026-07-20T12:17:18.620+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.d.s.SignatureDeletionOrchestrator  : deletion.ftp_ok ledgerId=e39a9611-839f-4695-b3f9-1366b0083cc1 outcome=DELETED
+2026-07-20T12:17:18.631+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.domain.service.DeletionTxSteps     : deletion.ftp_deleted ledgerId=e39a9611-839f-4695-b3f9-1366b0083cc1
+2026-07-20T12:17:18.675+05:30 ERROR 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.d.s.SignatureDeletionOrchestrator  : deletion.finalize_failed ledgerId=e39a9611-839f-4695-b3f9-1366b0083cc1 — ledger remains FTP_DELETED; reconciler will heal (Scenario A)
+
+org.springframework.dao.DataAccessResourceFailureException: injected: db connection lost
+	at com.acme.gateway.domain.service.DeletionTxSteps.finalizeCompletion(DeletionTxSteps.java:126) ~[classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359) ~[spring-aop-7.0.8.jar:7.0.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190) ~[spring-aop-7.0.8.jar:7.0.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158) ~[spring-aop-7.0.8.jar:7.0.8]
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:133) ~[spring-tx-7.0.8.jar:7.0.8]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:371) ~[spring-tx-7.0.8.jar:7.0.8]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:130) ~[spring-tx-7.0.8.jar:7.0.8]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179) ~[spring-aop-7.0.8.jar:7.0.8]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719) ~[spring-aop-7.0.8.jar:7.0.8]
+	at com.acme.gateway.domain.service.DeletionTxSteps$$SpringCGLIB$$0.finalizeCompletion(<generated>) ~[classes/:na]
+	at com.acme.gateway.domain.service.SignatureDeletionOrchestrator.finalizeOnly(SignatureDeletionOrchestrator.java:150) ~[classes/:na]
+	at com.acme.gateway.domain.service.SignatureDeletionOrchestrator.attemptFtpThenFinalize(SignatureDeletionOrchestrator.java:141) ~[classes/:na]
+	at com.acme.gateway.domain.service.SignatureDeletionOrchestrator.advance(SignatureDeletionOrchestrator.java:107) ~[classes/:na]
+	at com.acme.gateway.domain.service.SignatureDeletionOrchestrator.initiate(SignatureDeletionOrchestrator.java:98) ~[classes/:na]
+	at com.acme.gateway.it.DeletionSagaIntegrationTest.initiate(DeletionSagaIntegrationTest.java:286) ~[test-classes/:na]
+	at com.acme.gateway.it.DeletionSagaIntegrationTest.scenarioA_finalizationFails_thenReconcilerHeals(DeletionSagaIntegrationTest.java:221) ~[test-classes/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:701) ~[junit-platform-commons-6.0.3.jar:6.0.3]
+	at org.junit.platform.commons.support.ReflectionSupport.invokeMethod(ReflectionSupport.java:502) ~[junit-platform-commons-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.support.MethodReflectionUtils.invoke(MethodReflectionUtils.java:45) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:61) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:124) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:163) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:148) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:123) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:105) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:99) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:66) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:47) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:39) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:104) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:98) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invokeVoid(InterceptingExecutableInvoker.java:71) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$0(TestMethodTestDescriptor.java:219) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:215) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:157) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:70) ~[junit-jupiter-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:176) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:42) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:180) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:42) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$2(NodeTestTask.java:180) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$1(NodeTestTask.java:166) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:138) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$0(NodeTestTask.java:164) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:74) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:163) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:116) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:36) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:52) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:58) ~[junit-platform-engine-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.executeEngine(EngineExecutionOrchestrator.java:246) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.failOrExecuteEngine(EngineExecutionOrchestrator.java:218) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:179) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:108) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:66) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:157) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:65) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:125) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:58) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.InterceptingLauncher.lambda$execute$2(InterceptingLauncher.java:57) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.ClasspathAlignmentCheckingLauncherInterceptor.intercept(ClasspathAlignmentCheckingLauncherInterceptor.java:25) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.InterceptingLauncher.execute(InterceptingLauncher.java:56) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:58) ~[junit-platform-launcher-6.0.3.jar:6.0.3]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.apache.maven.surefire.api.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:125) ~[surefire-api-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.executeWithCancellationToken(LauncherAdapter.java:68) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.LauncherAdapter.execute(LauncherAdapter.java:54) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.execute(JUnitPlatformProvider.java:203) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:168) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:136) ~[surefire-junit-platform-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385) ~[surefire-booter-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162) ~[surefire-booter-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507) ~[surefire-booter-3.5.6.jar:3.5.6]
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495) ~[surefire-booter-3.5.6.jar:3.5.6]
+
+2026-07-20T12:17:18.707+05:30  INFO 14868 --- [entity-gateway-mcp] [       Thread-1] [entity-gateway-mcp,,] org.mockftpserver.fake.FakeFtpServer     : Server stopped.
+2026-07-20T12:17:18.749+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.reconcile.DeletionReconciler       : reconciler.sweep due=1
+2026-07-20T12:17:18.763+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.domain.service.DeletionTxSteps     : deletion.completed ledgerId=e39a9611-839f-4695-b3f9-1366b0083cc1 signatureId=f8953828-09d9-4730-956c-259630d340f2
+2026-07-20T12:17:18.796+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-22] [entity-gateway-mcp,,] org.mockftpserver.fake.FakeFtpServer     : Starting the server on port 56291
+]]></system-out>
+  </testcase>
+  <testcase name="scenarioB_exhaustion_escalatesToManual" classname="com.acme.gateway.it.DeletionSagaIntegrationTest" time="0.244">
+    <system-out><![CDATA[2026-07-20T12:17:18.862+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-22] [entity-gateway-mcp,,] org.mockftpserver.fake.FakeFtpServer     : Server stopped.
+2026-07-20T12:17:18.877+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.domain.service.DeletionTxSteps     : deletion.initiated ledgerId=39e3c6d7-b14a-4b96-80fa-e5e21e2fe02f signatureId=7f81057e-21e2-4722-82e4-b6c8311de281 requestId=954babd8-434e-49b7-b1ea-0fcd635c3e4c by=it-agent@test
+2026-07-20T12:17:18.931+05:30  WARN 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.domain.service.DeletionTxSteps     : deletion.retry_scheduled ledgerId=39e3c6d7-b14a-4b96-80fa-e5e21e2fe02f class=RETRYABLE_NETWORK attempt=1 nextAttemptAt=2026-07-20T06:47:48.931278100Z
+2026-07-20T12:17:18.974+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.reconcile.DeletionReconciler       : reconciler.sweep due=1
+2026-07-20T12:17:19.013+05:30 ERROR 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.domain.service.DeletionTxSteps     : deletion.failed_manual ledgerId=39e3c6d7-b14a-4b96-80fa-e5e21e2fe02f signatureId=7f81057e-21e2-4722-82e4-b6c8311de281 class=RETRYABLE_NETWORK attempts=2
+]]></system-out>
+  </testcase>
+  <testcase name="crashBetweenFtpAndTx2_healsViaIdempotent550" classname="com.acme.gateway.it.DeletionSagaIntegrationTest" time="0.495">
+    <system-out><![CDATA[2026-07-20T12:17:19.073+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-23] [entity-gateway-mcp,,] org.mockftpserver.fake.FakeFtpServer     : Starting the server on port 56291
+2026-07-20T12:17:19.141+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.domain.service.DeletionTxSteps     : deletion.initiated ledgerId=9f5a0b86-ffe8-41be-abb3-ae9aa5c64108 signatureId=7c082ed0-22e3-439b-9fcf-a1daad0f4883 requestId=789c91ea-38e8-47b2-802c-cfe3126caf6f by=it-agent@test
+2026-07-20T12:17:19.158+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-23] [entity-gateway-mcp,,] org.mockftpserver.fake.FakeFtpServer     : Connection accepted from host /127.0.0.1
+2026-07-20T12:17:19.159+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-24] [entity-gateway-mcp,,] o.m.core.command.ConnectCommandHandler   : Sending reply [220 Service ready for new user. (MockFtpServer 3.2.0; see http://mockftpserver.org)]
+2026-07-20T12:17:19.186+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-24] [entity-gateway-mcp,,] o.m.core.session.DefaultSession          : Received command: [USER gw]
+2026-07-20T12:17:19.186+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-24] [entity-gateway-mcp,,] o.m.fake.command.UserCommandHandler      : Sending reply [331 User name okay, need password.]
+2026-07-20T12:17:19.217+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-24] [entity-gateway-mcp,,] o.m.core.session.DefaultSession          : Received command: [PASS secret]
+2026-07-20T12:17:19.217+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-24] [entity-gateway-mcp,,] o.m.fake.command.PassCommandHandler      : Sending reply [230 User logged in, proceed.]
+2026-07-20T12:17:19.250+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-24] [entity-gateway-mcp,,] o.m.core.session.DefaultSession          : Received command: [DELE /signatures/016ef0f4-4e19-44f7-80b4-3989992cb377.p7s]
+2026-07-20T12:17:19.250+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-24] [entity-gateway-mcp,,] o.m.fake.command.DeleCommandHandler      : Sending reply [250 "/signatures/016ef0f4-4e19-44f7-80b4-3989992cb377.p7s" deleted.] args=[/signatures/016ef0f4-4e19-44f7-80b4-3989992cb377.p7s]
+2026-07-20T12:17:19.252+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.acme.gateway.ftp.CommonsNetFtpGateway  : FTP delete OK path=/signatures/016ef0f4-4e19-44f7-80b4-3989992cb377.p7s reply=250
+2026-07-20T12:17:19.282+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-24] [entity-gateway-mcp,,] o.m.core.session.DefaultSession          : Received command: [QUIT]
+2026-07-20T12:17:19.282+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-24] [entity-gateway-mcp,,] o.m.fake.command.QuitCommandHandler      : Sending reply [221 Service closing control connection.]
+2026-07-20T12:17:19.282+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.d.s.SignatureDeletionOrchestrator  : deletion.ftp_ok ledgerId=9f5a0b86-ffe8-41be-abb3-ae9aa5c64108 outcome=DELETED
+2026-07-20T12:17:19.362+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.reconcile.DeletionReconciler       : reconciler.sweep due=1
+2026-07-20T12:17:19.363+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-23] [entity-gateway-mcp,,] org.mockftpserver.fake.FakeFtpServer     : Connection accepted from host /127.0.0.1
+2026-07-20T12:17:19.364+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-25] [entity-gateway-mcp,,] o.m.core.command.ConnectCommandHandler   : Sending reply [220 Service ready for new user. (MockFtpServer 3.2.0; see http://mockftpserver.org)]
+2026-07-20T12:17:19.394+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-25] [entity-gateway-mcp,,] o.m.core.session.DefaultSession          : Received command: [USER gw]
+2026-07-20T12:17:19.394+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-25] [entity-gateway-mcp,,] o.m.fake.command.UserCommandHandler      : Sending reply [331 User name okay, need password.]
+2026-07-20T12:17:19.426+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-25] [entity-gateway-mcp,,] o.m.core.session.DefaultSession          : Received command: [PASS secret]
+2026-07-20T12:17:19.426+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-25] [entity-gateway-mcp,,] o.m.fake.command.PassCommandHandler      : Sending reply [230 User logged in, proceed.]
+2026-07-20T12:17:19.457+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-25] [entity-gateway-mcp,,] o.m.core.session.DefaultSession          : Received command: [DELE /signatures/016ef0f4-4e19-44f7-80b4-3989992cb377.p7s]
+2026-07-20T12:17:19.458+05:30  WARN 14868 --- [entity-gateway-mcp] [      Thread-25] [entity-gateway-mcp,,] o.m.fake.command.DeleCommandHandler      : Error handling command: Command[DELE:[/signatures/016ef0f4-4e19-44f7-80b4-3989992cb377.p7s]]; org.mockftpserver.fake.filesystem.FileSystemException: FileSystemException[message=/signatures/016ef0f4-4e19-44f7-80b4-3989992cb377.p7s; messageKey=filesystem.isNotAFile]
+
+org.mockftpserver.fake.filesystem.FileSystemException: FileSystemException[message=/signatures/016ef0f4-4e19-44f7-80b4-3989992cb377.p7s; messageKey=filesystem.isNotAFile]
+	at org.mockftpserver.fake.command.AbstractFakeCommandHandler.verifyFileSystemCondition(AbstractFakeCommandHandler.java:263) ~[MockFtpServer-3.2.0.jar:na]
+	at org.mockftpserver.fake.command.DeleCommandHandler.handle(DeleCommandHandler.java:42) ~[MockFtpServer-3.2.0.jar:na]
+	at org.mockftpserver.fake.command.AbstractFakeCommandHandler.handleCommand(AbstractFakeCommandHandler.java:75) ~[MockFtpServer-3.2.0.jar:na]
+	at org.mockftpserver.core.session.DefaultSession.readAndProcessCommand(DefaultSession.java:436) ~[MockFtpServer-3.2.0.jar:na]
+	at org.mockftpserver.core.session.DefaultSession.run(DefaultSession.java:399) ~[MockFtpServer-3.2.0.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2026-07-20T12:17:19.458+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-25] [entity-gateway-mcp,,] o.m.fake.command.DeleCommandHandler      : Sending reply [550 [/signatures/016ef0f4-4e19-44f7-80b4-3989992cb377.p7s] is not a file or does not exist.] args=[/signatures/016ef0f4-4e19-44f7-80b4-3989992cb377.p7s]
+2026-07-20T12:17:19.458+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.acme.gateway.ftp.CommonsNetFtpGateway  : FTP delete idempotent-success (550 not found) path=/signatures/016ef0f4-4e19-44f7-80b4-3989992cb377.p7s
+2026-07-20T12:17:19.489+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-25] [entity-gateway-mcp,,] o.m.core.session.DefaultSession          : Received command: [QUIT]
+2026-07-20T12:17:19.489+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-25] [entity-gateway-mcp,,] o.m.fake.command.QuitCommandHandler      : Sending reply [221 Service closing control connection.]
+2026-07-20T12:17:19.489+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.d.s.SignatureDeletionOrchestrator  : deletion.ftp_ok ledgerId=9f5a0b86-ffe8-41be-abb3-ae9aa5c64108 outcome=ALREADY_ABSENT
+2026-07-20T12:17:19.496+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.domain.service.DeletionTxSteps     : deletion.ftp_deleted ledgerId=9f5a0b86-ffe8-41be-abb3-ae9aa5c64108
+2026-07-20T12:17:19.516+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.domain.service.DeletionTxSteps     : deletion.completed ledgerId=9f5a0b86-ffe8-41be-abb3-ae9aa5c64108 signatureId=7c082ed0-22e3-439b-9fcf-a1daad0f4883
+]]></system-out>
+  </testcase>
+  <testcase name="scenarioB_ftpDown_thenReconcilerHeals" classname="com.acme.gateway.it.DeletionSagaIntegrationTest" time="0.326">
+    <system-out><![CDATA[2026-07-20T12:17:19.606+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-23] [entity-gateway-mcp,,] org.mockftpserver.fake.FakeFtpServer     : Server stopped.
+2026-07-20T12:17:19.619+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.domain.service.DeletionTxSteps     : deletion.initiated ledgerId=0eb26e37-0cf9-49ee-8607-ddcdbb5e715d signatureId=61e5db42-c4f6-4044-b489-2ef8bdb9c2d7 requestId=501f79ea-fc51-4dec-b157-30f79c8b3d91 by=it-agent@test
+2026-07-20T12:17:19.642+05:30  WARN 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.domain.service.DeletionTxSteps     : deletion.retry_scheduled ledgerId=0eb26e37-0cf9-49ee-8607-ddcdbb5e715d class=RETRYABLE_NETWORK attempt=1 nextAttemptAt=2026-07-20T06:47:49.642560200Z
+2026-07-20T12:17:19.666+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-26] [entity-gateway-mcp,,] org.mockftpserver.fake.FakeFtpServer     : Starting the server on port 56291
+2026-07-20T12:17:19.688+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.reconcile.DeletionReconciler       : reconciler.sweep due=1
+2026-07-20T12:17:19.692+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-26] [entity-gateway-mcp,,] org.mockftpserver.fake.FakeFtpServer     : Connection accepted from host /127.0.0.1
+2026-07-20T12:17:19.692+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-27] [entity-gateway-mcp,,] o.m.core.command.ConnectCommandHandler   : Sending reply [220 Service ready for new user. (MockFtpServer 3.2.0; see http://mockftpserver.org)]
+2026-07-20T12:17:19.714+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-27] [entity-gateway-mcp,,] o.m.core.session.DefaultSession          : Received command: [USER gw]
+2026-07-20T12:17:19.714+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-27] [entity-gateway-mcp,,] o.m.fake.command.UserCommandHandler      : Sending reply [331 User name okay, need password.]
+2026-07-20T12:17:19.749+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-27] [entity-gateway-mcp,,] o.m.core.session.DefaultSession          : Received command: [PASS secret]
+2026-07-20T12:17:19.750+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-27] [entity-gateway-mcp,,] o.m.fake.command.PassCommandHandler      : Sending reply [230 User logged in, proceed.]
+2026-07-20T12:17:19.783+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-27] [entity-gateway-mcp,,] o.m.core.session.DefaultSession          : Received command: [DELE /signatures/89dfd45c-24f4-43a5-a79f-521c5fff797a.p7s]
+2026-07-20T12:17:19.783+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-27] [entity-gateway-mcp,,] o.m.fake.command.DeleCommandHandler      : Sending reply [250 "/signatures/89dfd45c-24f4-43a5-a79f-521c5fff797a.p7s" deleted.] args=[/signatures/89dfd45c-24f4-43a5-a79f-521c5fff797a.p7s]
+2026-07-20T12:17:19.783+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.acme.gateway.ftp.CommonsNetFtpGateway  : FTP delete OK path=/signatures/89dfd45c-24f4-43a5-a79f-521c5fff797a.p7s reply=250
+2026-07-20T12:17:19.815+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-27] [entity-gateway-mcp,,] o.m.core.session.DefaultSession          : Received command: [QUIT]
+2026-07-20T12:17:19.815+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-27] [entity-gateway-mcp,,] o.m.fake.command.QuitCommandHandler      : Sending reply [221 Service closing control connection.]
+2026-07-20T12:17:19.815+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.d.s.SignatureDeletionOrchestrator  : deletion.ftp_ok ledgerId=0eb26e37-0cf9-49ee-8607-ddcdbb5e715d outcome=DELETED
+2026-07-20T12:17:19.823+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.domain.service.DeletionTxSteps     : deletion.ftp_deleted ledgerId=0eb26e37-0cf9-49ee-8607-ddcdbb5e715d
+2026-07-20T12:17:19.843+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.domain.service.DeletionTxSteps     : deletion.completed ledgerId=0eb26e37-0cf9-49ee-8607-ddcdbb5e715d signatureId=61e5db42-c4f6-4044-b489-2ef8bdb9c2d7
+]]></system-out>
+  </testcase>
+  <testcase name="duplicateRequestId_exactlyOnce" classname="com.acme.gateway.it.DeletionSagaIntegrationTest" time="0.286">
+    <system-out><![CDATA[2026-07-20T12:17:19.946+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.domain.service.DeletionTxSteps     : deletion.initiated ledgerId=dd0919b9-1ca2-40e4-9b06-f44465e8c198 signatureId=bdea9708-205b-4a4b-ba4f-666bb32d03f8 requestId=31da13d6-8d77-4ff4-8ff5-ad97dd692b60 by=it-agent@test
+2026-07-20T12:17:19.965+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-26] [entity-gateway-mcp,,] org.mockftpserver.fake.FakeFtpServer     : Connection accepted from host /127.0.0.1
+2026-07-20T12:17:19.965+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-28] [entity-gateway-mcp,,] o.m.core.command.ConnectCommandHandler   : Sending reply [220 Service ready for new user. (MockFtpServer 3.2.0; see http://mockftpserver.org)]
+2026-07-20T12:17:19.998+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-28] [entity-gateway-mcp,,] o.m.core.session.DefaultSession          : Received command: [USER gw]
+2026-07-20T12:17:19.998+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-28] [entity-gateway-mcp,,] o.m.fake.command.UserCommandHandler      : Sending reply [331 User name okay, need password.]
+2026-07-20T12:17:20.032+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-28] [entity-gateway-mcp,,] o.m.core.session.DefaultSession          : Received command: [PASS secret]
+2026-07-20T12:17:20.032+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-28] [entity-gateway-mcp,,] o.m.fake.command.PassCommandHandler      : Sending reply [230 User logged in, proceed.]
+2026-07-20T12:17:20.065+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-28] [entity-gateway-mcp,,] o.m.core.session.DefaultSession          : Received command: [DELE /signatures/5fa882bc-e94d-4877-bb96-f8e20b5e5e03.p7s]
+2026-07-20T12:17:20.066+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-28] [entity-gateway-mcp,,] o.m.fake.command.DeleCommandHandler      : Sending reply [250 "/signatures/5fa882bc-e94d-4877-bb96-f8e20b5e5e03.p7s" deleted.] args=[/signatures/5fa882bc-e94d-4877-bb96-f8e20b5e5e03.p7s]
+2026-07-20T12:17:20.066+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.acme.gateway.ftp.CommonsNetFtpGateway  : FTP delete OK path=/signatures/5fa882bc-e94d-4877-bb96-f8e20b5e5e03.p7s reply=250
+2026-07-20T12:17:20.098+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-28] [entity-gateway-mcp,,] o.m.core.session.DefaultSession          : Received command: [QUIT]
+2026-07-20T12:17:20.098+05:30  INFO 14868 --- [entity-gateway-mcp] [      Thread-28] [entity-gateway-mcp,,] o.m.fake.command.QuitCommandHandler      : Sending reply [221 Service closing control connection.]
+2026-07-20T12:17:20.098+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.d.s.SignatureDeletionOrchestrator  : deletion.ftp_ok ledgerId=dd0919b9-1ca2-40e4-9b06-f44465e8c198 outcome=DELETED
+2026-07-20T12:17:20.105+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.domain.service.DeletionTxSteps     : deletion.ftp_deleted ledgerId=dd0919b9-1ca2-40e4-9b06-f44465e8c198
+2026-07-20T12:17:20.127+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.domain.service.DeletionTxSteps     : deletion.completed ledgerId=dd0919b9-1ca2-40e4-9b06-f44465e8c198 signatureId=bdea9708-205b-4a4b-ba4f-666bb32d03f8
+2026-07-20T12:17:20.159+05:30  INFO 14868 --- [entity-gateway-mcp] [           main] [entity-gateway-mcp,,] c.a.g.d.s.SignatureDeletionOrchestrator  : deletion.duplicate requestId=31da13d6-8d77-4ff4-8ff5-ad97dd692b60 originalLedgerId=dd0919b9-1ca2-40e4-9b06-f44465e8c198
+]]></system-out>
+  </testcase>
+</testsuite>

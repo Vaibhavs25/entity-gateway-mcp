@@ -1,0 +1,4 @@
+com\acme\gateway\domain\service\SignatureDeletionOrchestratorTest.class
+com\acme\gateway\ftp\CommonsNetFtpGatewayTest.class
+com\acme\gateway\it\DeletionSagaIntegrationTest$TestSecurity.class
+com\acme\gateway\it\DeletionSagaIntegrationTest.class
