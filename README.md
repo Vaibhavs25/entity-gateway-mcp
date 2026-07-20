@@ -1,3 +1,4 @@
+![CI](https://github.com/Vaibhavs25/entity-gateway-mcp/actions/workflows/ci.yml/badge.svg)
 # entity-gateway-mcp
 
 Secure MCP server (Streamable HTTP) exposing a strict DML-only tool surface
